@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home sweet home
+          <a class="nav-link" href="#">Hoofdpagina
                 <span class="sr-only">(current)</span>
               </a>
         </li>
@@ -50,8 +50,27 @@
   <div class="container h-100">
     <div class="row h-100 align-items-center">
       <div class="col-12 text-center">
-        <h1 class="font-weight-light">Vertically Centered Masthead Content</h1>
-        <p class="lead">A great starter layout for a landing page</p>
+        <div> 
+            <h3>Over ons<h3>
+            <p>Cursus 10-vingerblind-computertypen voor kinderen en volwassenen.
+
+              Wij geven al vele jaren les en zijn zeer ervaren.
+
+              U kunt kiezen uit een klassikale cursus in groepsverband, maar ook uit een individuele cursus online met online coaching.
+
+              Huiswerk wordt automatisch nagekeken.
+
+              Door de kleine groepen is er veel persoonlijke aandacht, begeleiding en uitleg.
+
+              Wie eenmaal de cursus met succes heeft doorlopen, heeft hier de rest van zijn/haar leven profijt van.
+
+              Ook voor kinderen met dyslexie bent u bij ons aan het juiste adres.
+
+              Heeft u na het lezen van onze website nog vragen, neem dan gerust contact met ons op, wij zullen proberen al uw vragen te beantwoorden.
+            </p>
+        </div>
+        
+            
       </div>
     </div>
   </div>
