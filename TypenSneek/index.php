@@ -23,7 +23,7 @@
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Over ons</a>
+          <a class="nav-link" href="#">Over jou</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Blindtypen</a>
