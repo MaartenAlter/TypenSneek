@@ -26,11 +26,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Hoofdpagina
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="OverOns.php">Over ons</a>
                 </li>
@@ -95,6 +91,7 @@
 
 </div>
 <!--/contact form-->
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
