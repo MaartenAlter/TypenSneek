@@ -38,7 +38,7 @@
           <a class="nav-link" href="#">De cursus</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Aanmelden</a>
+          <a class="nav-link" href="aanmelden.php">Aanmelden</a>
         </li>
       </ul>
     </div>
