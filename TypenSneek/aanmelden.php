@@ -19,6 +19,7 @@ if (!$conn) {
 <html>
 
 <body>
+  <a href="index.php">terug</a>
     <h3>Aanmelden: </h3>
     <form action="aanmelden.php" method="post">
         <input type="text" name="firstname" id="firstname" placeholder="Voornaam..."> <br>
@@ -58,14 +59,16 @@ if(isset($_POST['submit'])){
     $place = $_POST['place'];
     $school = $_POST['school'];
     $command = $_POST['command'];
-
+    $usertype = 'user';
+    $gemaaktop = date("Y-m-d");
+    $aanmelding = 0;
 
    
       
       
 
-    $sql = "INSERT INTO gebruikers (Voornaam, Achternaam, Email, Telefoonnummer, GeboorteDatum, Straat, Postcode, Woonplaats, School, Opmerking)
-    VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$dateofbirth', '$street', '$zipcode', '$place', '$school', '$command')";
+    $sql = "INSERT INTO gebruikers (Voornaam, Achternaam, Email, Telefoonnummer, GeboorteDatum, Straat, Postcode, Woonplaats, School, Opmerking, GebruikerType, GemaaktOp, Aangemeld)
+    VALUES ('$firstname', '$lastname', '$email', '$phonenumber', '$dateofbirth', '$street', '$zipcode', '$place', '$school', '$command', '$usertype', '$gemaaktop', '$aanmelding' )";
      if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
       } else {
