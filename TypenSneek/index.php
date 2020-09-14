@@ -32,7 +32,7 @@
           <a class="nav-link" href="#">Ervaringen</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Dyslexie</a>
+          <a class="nav-link" href="Dyslexie.php">Dyslexie</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">De cursus</a>
