@@ -15,7 +15,7 @@
 
     <title>Contact TypenSneek</title>
 </head>
-<body>
+<body class="bg-light">
 
 <!--nav bar-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
@@ -83,6 +83,7 @@
                 <input class="form-control" name="email" placeholder="E-mail..." /><br />
                 <textarea class="form-control" name="text" placeholder="Hoe kunnen wij u helpen?" style="height:150px;"></textarea><br />
                 <input class="btn btn-primary" type="submit" value="Verstuur" /><br /><br />
+                <a href="#" class="btn btn-primary">Verstuur   <span class="glyphicon glyphicon-hand-right"></span></a>
             </form>
         </div>
 <!--        /contact formulier -->
@@ -91,7 +92,19 @@
 
 </div>
 <!--/contact form-->
+<!-- Footer -->
+<footer class="page-footer font-small teal pt-4 bg-light " style="margin-top: 100px">
 
+
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="#" style="text-decoration: none; "> typensneek.nl</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
