@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
     $school = $_POST['school'];
     $command = $_POST['command'];
     $usertype = 'user';
-    $gemaaktop = date("d-m-Y");
+    $gemaaktop = date("Y-m-d");
     $aanmelding = 0;
 
    

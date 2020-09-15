@@ -28,14 +28,14 @@ echo "<table border='1'>
 <th>School</th>
 <th>Opmerking</th>
 <th>Gemaakt op</th>
-<th>Gebruikersnaam</th>
-<th>Wachtwoord</th>
+<!-- <th>Gebruikersnaam</th> -->
+<!--  <th>Wachtwoord</th> -->
 
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
-
+echo "<form action='adminpage.php' method='POST'>";
 echo "<tr>";
 echo "<td>" . $row['Voornaam'] . "</td>";
 echo "<td>" . $row['Achternaam'] . "</td>";
@@ -48,43 +48,61 @@ echo "<td>" . $row['Woonplaats'] . "</td>";
 echo "<td>" . $row['School'] . "</td>";
 echo "<td>" . $row['Opmerking'] . "</td>";
 echo "<td>" . $row['GemaaktOp'] . "</td>";
-echo "<td>" . "<input type='text' name='username'  id=" .$row['ID']."   >" . "</td>";
-echo "<td>" . "<input type='password' name='password' id=" .$row['ID']." >". "</td>";
-echo "<td>" . "<a href='adminpage.php?action=accept&id=".$row['ID']. "'>accepteer</a>" . "</td>";
-echo "<td>" . "<a href='adminpage.php?action=delete&id=".$row['ID']."'onClick='return confirm(/Weet je zeker dat je de record wilt wissen?/)'>verwijder</a>" . "</td>";
+//echo "<td>" . "<input type='text' name='username'  id=" .$row['ID']."   >" . "</td>";
+//echo "<td>" . "<input type='password' name='password' id=" .$row['ID']." >". "</td>";
+echo "<td>" . "<a href='adminpage.php?action=accept&id=".$row['ID']. "'>registreer</a>" . "</td>";
+echo "<td>" . "<a href='adminpage.php?action=delete&id=".$row['ID']."'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>verwijder</a>" . "</td>";
 echo "</tr>";
 
 
 }
 echo "</table>";
-
+echo " </form>";
 
 
     if (isset($_GET['action']) && $_GET['action'] === 'accept') {
-        $result = mysqli_query($conn, $sql);
+      $sql = "SELECT * FROM gebruikers WHERE id=" .$_GET['id'];
+      $result = mysqli_query($conn, $sql);
+  
+      if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<h2>Registreren:</h2> 
+            <form action='adminpage.php?action=edit&id=".$_GET['id']."' method='POST'> <br>
+            Naam: <input type='text' value='".$row['Voornaam']."' required name='voornaam' '><br>
+            Achternaam: <input type='text' value='".$row['Achternaam']."' required name='achternaam' '><br>
+            Email: <input type='text' value='".$row['Email']."' required name='email' '><br>
+            Gebruikersnaam: <input type='text'  required name='username' '><br>
+            Wachtwoord:  <input type='password'  required name='password' '><br>
+            <input type='submit' name='Submit' value='Registreer'' ><br>
+            <br></form> <br>";
+        }
+        if (isset($_POST['Submit'])) { 
         
-     $username = $_POST["username"];
-     $password = $_POST["password"];
+        
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            
+            $sql = "UPDATE gebruikers SET Gebruikersnaam= $username, Wachtwoord= $password WHERE ID=" .$_GET['id'];
+            $result = mysqli_query($conn, $sql);
+            header("Location: adminpage.php");
+        }
 
-     $sql = "UPDATE gebruikers SET Gebruikersnaam='$username', Wachtwoord='$password' WHERE ID=" .$_GET['ID'];
-     $result = mysqli_query($conn, $sql);
-     header("Location: adminpage.php");
 
-     if (mysqli_query($conn, $sql)) {
-         echo "New record created successfully";
-       } else {
-         echo "Error: " . $sql . "<br>" . mysqli_error($conn);      }
 
     }
+}
+        
 
 
 
     if (isset($_GET['action']) && $_GET['action'] === 'delete') {
         $sql = "DELETE FROM gebruikers WHERE  ID=" .$_GET['id'];
         $result = mysqli_query($conn, $sql);
-    
+        header("Location: adminpage.php");
         }
-mysqli_close($conn);
+
+
+    mysqli_close($conn);
 ?>
 
 
