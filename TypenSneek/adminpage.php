@@ -67,13 +67,13 @@ echo " </form>";
       if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<h2>Registreren:</h2> 
-            <form action='adminpage.php?action=edit&id=".$_GET['id']."' method='POST'> <br>
-            Naam: <input type='text' value='".$row['Voornaam']."' required name='voornaam' '><br>
-            Achternaam: <input type='text' value='".$row['Achternaam']."' required name='achternaam' '><br>
-            Email: <input type='text' value='".$row['Email']."' required name='email' '><br>
+            <form action='adminpage.php?action=accept&id=".$_GET['id']."' method='POST'> <br>
+              Naam: ". $row['Voornaam']. "<br>
+              Achternaam: ". $row['Achternaam']. "<br>
+              Email: ". $row['Email']. "<br>
             Gebruikersnaam: <input type='text'  required name='username' '><br>
-            Wachtwoord:  <input type='password'  required name='password' '><br>
-            <input type='submit' name='Submit' value='Registreer'' ><br>
+            Wachtwoord:  <input type='password'  required name='password'  '><br>
+            <input type='submit' name='Submit' value='Registreer' onClick='return confirm(/Weet u zeker dat u deze gebruiker wilt toevoegen?/) '><br>
             <br></form> <br>";
         }
         if (isset($_POST['Submit'])) { 
@@ -82,7 +82,7 @@ echo " </form>";
             $username = $_POST['username'];
             $password = $_POST['password'];
             
-            $sql = "UPDATE gebruikers SET Gebruikersnaam= $username, Wachtwoord= $password WHERE ID=" .$_GET['id'];
+            $sql = "UPDATE gebruikers SET Gebruikersnaam= '$username', Wachtwoord= '$password', Aangemeld= 1 WHERE ID=" .$_GET['id'];
             $result = mysqli_query($conn, $sql);
             header("Location: adminpage.php");
         }
