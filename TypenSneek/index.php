@@ -15,9 +15,9 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top " >
     <div class="container">
-        <a class="navbar-brand" href="#">TypenSneek</a>
+        <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,7 +42,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="aanmelden.php">Aanmelden</a>
                 </li>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Contact.php">Contact</a>
                 </li>
@@ -50,6 +49,7 @@
         </div>
     </div>
 </nav>
+
 
 <div class="container" style="margin-top: 100px">
     <div class="row">
@@ -136,7 +136,7 @@
                 8607 DV SNEEK<br>
                 0515 - 419424<br>
                 <br><br>
-                <button type="button" class="btn btn-outline-primary">Stuur een bericht</button>
+                <button type="button" class="btn btn-outline-primary" >Stuur een bericht</button>
 
 
             </div>

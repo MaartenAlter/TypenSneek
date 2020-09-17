@@ -14,10 +14,9 @@
     <title>Hello, world!</title>
 </head>
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top " >
     <div class="container">
-        <a class="navbar-brand" href="#">TypenSneek</a>
+        <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,7 +40,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="aanmelden.php">Aanmelden</a>
-                </li>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Contact.php">Contact</a>
