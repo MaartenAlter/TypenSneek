@@ -100,6 +100,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
+
+
+
     <div class="wrapper">
         <h2>Login</h2>
         <p>Vul hier je gebruikersnaam en wachtwoord in!</p>
