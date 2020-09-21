@@ -24,9 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="OverOns.php">Over ons</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="Blindtypen.php">Blindtypen</a>
                 </li>
@@ -57,24 +55,24 @@
            <h4 class="mx-auto">Over ons</h4>
             <hr>
             <p>
-                Cursus 10-vingerblind-computertypen voor kinderen en volwassenen.
+                Cursus 10-vingerblind-computertypen voor kinderen en volwassenen.<br><br>
+                Wij geven al vele jaren les en zijn zeer ervaren.<br><br>
 
-                Wij geven al vele jaren les en zijn zeer ervaren.
+                U kunt kiezen uit een klassikale cursus in groepsverband, maar ook uit een individuele cursus online met online coaching.<br><br>
 
-                U kunt kiezen uit een klassikale cursus in groepsverband, maar ook uit een individuele cursus online met online coaching.
-
-                Huiswerk wordt automatisch nagekeken.
+                Huiswerk wordt automatisch nagekeken.<br><br>
 
                 Door de kleine groepen is er veel persoonlijke aandacht, begeleiding en uitleg.
+                <br><br>
+                Wie eenmaal de cursus met succes heeft doorlopen, heeft hier de rest van zijn/haar leven profijt van.<br><br>
 
-                Wie eenmaal de cursus met succes heeft doorlopen, heeft hier de rest van zijn/haar leven profijt van.
-
-                Ook voor kinderen met dyslexie bent u bij ons aan het juiste adres.
+                Ook voor kinderen met dyslexie bent u bij ons aan het juiste adres.<br><br>
 
                 Heeft u na het lezen van onze website nog vragen, neem dan gerust contact met ons op, wij zullen proberen al uw vragen te beantwoorden.
             </p>
             <br>
-            <button type="button" class="btn btn-outline-primary">Lees meer over ons!</button>
+            <br>
+
         </div>
 
         <div class="col-sm">
