@@ -131,7 +131,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="Contact.php">Contact</a>
-                </li>
+                </li><?php
+                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                    //header("location: login.php");
+                    //exit;
+                    
+                    echo "<form action='index.php' method='post'> <input type='submit' name='logout' value='Uitloggen' class='btn btn-primary'> </form> ";
+
+                    if(isset($_POST['logout'])){
+                                // Initialize the session
+                                session_start();
+                
+                                // Unset all of the session variables
+                                $_SESSION = array();
+                        
+                                // Destroy the session.
+                                session_destroy();
+                        
+                                // Redirect to login page
+                                header("location: index.php");
+                                exit;
+                    }
+
+
+                }
+                ?>
             </ul>
         </div>
     </div>
@@ -168,24 +192,16 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     //header("location: login.php");
     //exit;
     
-    echo " <form action='index.php' method='post'> <input type='submit' name='logout' value='Uitloggen' class='btn btn-primary'> </form> ";
-
-    if(isset($_POST['logout'])){
-                // Initialize the session
-                session_start();
- 
-                // Unset all of the session variables
-                $_SESSION = array();
-         
-                // Destroy the session.
-                session_destroy();
-         
-                // Redirect to login page
-                header("location: index.php");
-                exit;
-    }
-
-
+   echo "
+        <div class='col-sm'>
+           <h4 class='mx-auto'>Hoi, " . $_SESSION['username'] . "</h4>
+            <hr>
+            <p>
+                Leuk dat je er bent! De typcursus staat voor je klaar. Om te beginnen klik de knop hieronder. En voor vragen kun je altijd de online coach gebruiken.
+            </p>
+            <br>
+            <button type='button' class='btn btn-outline-primary' href='DeCursus.php'>Cursus</button>
+        </div>";
 }else{
 ?>
         <div class="wrapper">
