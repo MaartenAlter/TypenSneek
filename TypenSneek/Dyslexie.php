@@ -82,46 +82,73 @@
 
 
 
-<!-- Footer -->
-<section id="footer" class="footer">
-    <div class="container">
-        <div class="row text-center text-xs-center text-sm-left text-md-left">
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <h5>links</h5>
-                <ul class="list-unstyled quick-links">
-                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Aanmelden</a></li>
-                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Blindtypen</a></li>
-                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Dyslexie</a></li>
-                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Over ons</a></li>
-                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Ervaringen</a></li>
-                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>De cursus</a></li>
-                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Contact</a></li>
+<!--    footer-->
+<!-- Grid row -->
+<div class="footer" id="footer">
 
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <h5>Contact</h5>
-                <!-- Google Map -->
-                <div style="width: 350px;position: relative;"><iframe width="350" height="170" src="https://maps.google.com/maps?width=350&amp;height=120&amp;hl=en&amp;q=Pinksterbloem%2026+(Typen%20Sneek)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                    <div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
-                        <small style="line-height: 1.8;font-size: 2px;background: #fff;">
-                        </small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+    <!-- Grid column -->
+    <div class="col-md-12 mb-4">
+
+        <!--Footer-->
+        <footer class="page-footer blue text-center text-md-left mt-0">
+
+            <!--Footer Links-->
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!--First column-->
+                    <div class="col-md-6">
+                        <h5 class="title mb-3">TypenSneek</h5>
+                        <p>               Pinksterbloem 26 <br>
+                            8607 DV SNEEK<br>
+                            0515 - 419424<br>
+                            <br><br> </p>
+                    </div>
+                    <!--/.First column-->
+
+                    <!--Second column-->
+                    <div class="col-md-3">
+                        <h5 class="list-unstyled quick-links">Links</h5>
+                        <ul>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Aanmelden</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Blindtypen</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Dyslexie</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Over ons</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5 class="list-unstyled quick-links"><br></h5>
+                        <ul>
+
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Ervaringen</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>De cursus</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Contact</a></li>
+                        </ul>
+                    </div>
+                    <!--/.Second column-->
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-4 col-md-4">
-                <br><br><br>
-                Pinksterbloem 26 <br>
-                8607 DV SNEEK<br>
-                0515 - 419424<br>
-                <br><br>
-                <button type="button" class="btn btn-outline-primary">Stuur een bericht</button>
+            <!--/.Footer Links-->
 
+            <!--Copyright-->
+            <div class="footer-copyright">
+                <div class="container-fluid">
+                    © 2020 Copyright: <a href="index.php"> TypenSneek.nl </a>
 
+                </div>
             </div>
-        </div>
+            <!--/.Copyright-->
+
+        </footer>
+        <!--/.Footer-->
 
     </div>
-</section>
+    <!-- Grid column -->
+</div>
+<!-- Grid row -->
+<!-- ./Footer -->
 
 <!-- ./Footer -->
 <!-- Optional JavaScript -->

@@ -101,19 +101,73 @@
 </div>
 <!--/contact form-->
 
-<!-- Footer -->
-<footer class="page-footer font-small teal pt-4 bg-light " style="margin-top: 100px">
+<!--    footer-->
+<!-- Grid row -->
+<div class="footer" id="footer">
 
+    <!-- Grid column -->
+    <div class="col-md-12 mb-4">
 
+        <!--Footer-->
+        <footer class="page-footer blue text-center text-md-left mt-0">
 
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-        <a href="index.php" style="text-decoration: none; "> typensneek.nl</a>
+            <!--Footer Links-->
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!--First column-->
+                    <div class="col-md-6">
+                        <h5 class="title mb-3">TypenSneek</h5>
+                        <p>               Pinksterbloem 26 <br>
+                            8607 DV SNEEK<br>
+                            0515 - 419424<br>
+                            <br><br> </p>
+                    </div>
+                    <!--/.First column-->
+
+                    <!--Second column-->
+                    <div class="col-md-3">
+                        <h5 class="list-unstyled quick-links">Links</h5>
+                        <ul>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Aanmelden</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Blindtypen</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Dyslexie</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Over ons</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h5 class="list-unstyled quick-links"><br></h5>
+                        <ul>
+
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Ervaringen</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>De cursus</a></li>
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Contact</a></li>
+                        </ul>
+                    </div>
+                    <!--/.Second column-->
+                </div>
+            </div>
+            <!--/.Footer Links-->
+
+            <!--Copyright-->
+            <div class="footer-copyright">
+                <div class="container-fluid">
+                    © 2020 Copyright: <a href="index.php"> TypenSneek.nl </a>
+
+                </div>
+            </div>
+            <!--/.Copyright-->
+
+        </footer>
+        <!--/.Footer-->
+
     </div>
-    <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
+    <!-- Grid column -->
+</div>
+<!-- Grid row -->
+<!-- ./Footer -->
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

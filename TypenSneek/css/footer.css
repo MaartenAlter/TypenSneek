@@ -77,3 +77,10 @@ section .section-title {
 .footer{
     margin-top: 100px;
 }
+
+.hm-gradient {
+    background-image: linear-gradient(to top, #4880f3 0%, #af0001 99%, #8db121 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
