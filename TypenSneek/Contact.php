@@ -25,38 +25,72 @@
 <body class="">
 
 <!--nav bar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top " >
-    <div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary purple shadow fixed-top mx-auto " >
+    <div class="container mx-auto ">
         <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler mx-auto " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse mxt-4 pt-1" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto ">
 
 
-                <li class="nav-item">
-                    <a class="nav-link" href="Blindtypen.php">Blindtypen</a>
+                <li class="nav-item mx-1 pt-2 text-center">
+                    <a class="nav-link bg-warning rounded-pill" href="Blindtypen.php">Blindtypen</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Ervaringen.php">Ervaringen</a>
+                <li class="nav-item mx-1 pt-2 text-center">
+                    <a class="nav-link bg-success rounded-pill" href="Ervaringen.php">Ervaringen</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Dyslexie.php">Dyslexie</a>
+                <li class="nav-item mx-1 pt-2 text-center">
+                    <a class="nav-link bg-danger rounded-pill" href="Dyslexie.php">Dyslexie</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="DeCursus.php">De cursus</a>
+                <li class="nav-item mx-1 pt-2 text-center ">
+                    <a class="nav-link bg-success rounded-pill " href="DeCursus.php ">De cursus</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="aanmelden.php">Aanmelden</a>
+                <li class="nav-item mx-1 pt-2 text-center">
+                    <a class="nav-link bg-warning rounded-pill"  href="aanmelden.php">Aanmelden</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Contact.php">Contact</a>
-                </li>
+                <li class="nav-item  mx-1 pt-2 text-center">
+                    <a class="nav-link bg-danger rounded-pill" href="Contact.php">Contact</a>
+                </li><?php
+                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+
+                    if($_SESSION["usertype"] == "admin"){
+                        echo "<li class='nav-item'>
+                            <a class='nav-link' href='adminpage.php'>Coach Pagina</a>
+                            </li>";
+
+                    }
+
+
+                }
+                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                    //header("location: login.php");
+                    //exit;
+
+                    echo "<form action='index.php' method='post'> <input type='submit' name='logout' value='Uitloggen' class='btn btn-primary'> </form> ";
+
+                    if(isset($_POST['logout'])){
+                        // Initialize the session
+                        session_start();
+
+                        // Unset all of the session variables
+                        $_SESSION = array();
+
+                        // Destroy the session.
+                        session_destroy();
+
+                        // Redirect to login page
+                        header("location: index.php");
+                        exit;
+                    }
+                }
+                ?>
             </ul>
         </div>
     </div>
 </nav>
+
 <!--/nav bar-->
 
 

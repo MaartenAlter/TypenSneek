@@ -72,7 +72,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                 } else{
                     // Display an error message if username doesn't exist
-                    $username_err = "Geen account gevonden met deze gebruikersnaam.";
+//                    $username_err = "Geen account gevonden met deze gebruikersnaam.";
+                    $username_err = "<div class='alert alert-danger' role='alert'> fout! </div> ";
                 }
             } else{
                 echo "Oeps! Er is wat fout gegaan.";
@@ -120,4 +121,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            
