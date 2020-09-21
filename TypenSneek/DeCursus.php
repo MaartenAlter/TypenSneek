@@ -1,3 +1,23 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!--    external css -->
+    <link rel="stylesheet" href="css/footer.css"
+    <title>Hello, world!</title>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+    function onSubmit(token) {
+        document.getElementById("captcha").submit();
+    }
+</script>
+</head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top " >
     <div class="container">
         <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
@@ -7,9 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="OverOns.php">Over ons</a>
-                </li>
+
                 <li class="nav-item">
                     <a class="nav-link" href="Blindtypen.php">Blindtypen</a>
                 </li>

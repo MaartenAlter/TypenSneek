@@ -22,6 +22,8 @@ if($_SESSION['usertype'] === "admin"){
 }
 
 $result = mysqli_query($conn,"SELECT * FROM gebruikers WHERE Aangemeld = 0 ");
+
+echo "<a href='index.php'>Terug</a>";
 echo "<h2> Aanmeldingen: </h2>";
 echo "<table border='1'>
 <tr>
