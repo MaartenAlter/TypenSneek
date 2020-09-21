@@ -1,3 +1,23 @@
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!--    external css -->
+    <link rel="stylesheet" href="css/footer.css"
+    <title>Hello, world!</title>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+    function onSubmit(token) {
+        document.getElementById("captcha").submit();
+    }
+</script>
+</head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top " >
     <div class="container">
         <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
@@ -7,9 +27,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item">
-                    <a class="nav-link" href="OverOns.php">Over ons</a>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="Blindtypen.php">Blindtypen</a>
                 </li>
@@ -54,27 +72,61 @@ if (!$conn) {
 <html>
 
 <body>
-  <a href="index.php">terug</a>
+<br><br><br><br><br>
+<div class="container">
     <h3>Aanmelden: </h3>
     <form action="aanmelden.php" method="post">
-        <input type="text" name="firstname" id="firstname" placeholder="Voornaam..."> <br>
-        <input type="text" name="lastname" id="lastname" placeholder="Achternaam..."> <br>
-        <input type="text" name="email" id="email" placeholder="Email..."> <br>
-        <input type="text" name="phonenumber" id="phonenumber" placeholder="Telefoonnummer..."> <br>
-        <input type="date" name="dateofbirth" id="dateofbirth" placeholder="Geboortedatum..."> <br>
-        <input type="text" name="street" id="street" placeholder="Straat en huisnummer..."> <br>
-        <input type="text" name="zipcode" id="zipcode" placeholder="Postcode..."><br>
-        <input type="text" name="place" id="place" placeholder="Woonplaats..."><br>
-        <input type="text" name="school" id="school" placeholder="School..."><br>
-        <input type="text" name="command" id="command" placeholder="Opmerking..."><br>
-        <input type="submit" value="Aanmaken" name="submit"><br>
+    
+    <div class="form-group">
+        <label for="exampleInputEmail1">Voornaam: </label>
+        <input type="text" name="firstname" id="firstname" placeholder="Voornaam... " class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Achternaam: </label>
+        <input type="text" name="lastname" id="lastname" placeholder="Achternaam..." class="form-control"> 
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email: </label>
+        <input type="text" name="email" id="email" placeholder="Email..." class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Telefoonnummer: </label>
+        <input type="text" name="phonenumber" id="phonenumber" placeholder="Telefoonnummer..." class="form-control"> 
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Geboortedatum: </label>
+        <input type="date" name="dateofbirth" id="dateofbirth" placeholder="Geboortedatum..." class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Straat en huisnummer: </label>
+        <input type="text" name="street" id="street" placeholder="Straat en huisnummer..." class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Postcode: </label>
+        <input type="text" name="zipcode" id="zipcode" placeholder="Postcode..." class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Woonplaats: </label>
+        <input type="text" name="place" id="place" placeholder="Woonplaats..." class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">School: </label>
+        <input type="text" name="school" id="school" placeholder="School..." class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Opmerking: </label>
+        <input type="text" name="command" id="command" placeholder="Opmerking..." class="form-control">
+    </div>
+    
+    <input type="submit" value="Aanmaken" name="submit" class="btn btn-primary">
         <!-- Gebruikerstype Admin of gebruiker -->
         <!-- Gemaakt op -->
         <!-- Gebruikersnaam -->
         <!-- Wachtwoord -->
         <!-- Aangemeld tinyint - 0 meegeven-->
-
+   
     </form>
+<div>
 </body>
 </html>
 

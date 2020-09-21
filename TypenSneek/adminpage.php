@@ -12,8 +12,18 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
+session_start();
+
+
+if($_SESSION['usertype'] === "admin"){
+  
+}else{
+  header("Location: index.php");
+}
 
 $result = mysqli_query($conn,"SELECT * FROM gebruikers WHERE Aangemeld = 0 ");
+
+echo "<a href='index.php'>Terug</a>";
 echo "<h2> Aanmeldingen: </h2>";
 echo "<table border='1'>
 <tr>

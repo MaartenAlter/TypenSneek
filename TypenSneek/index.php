@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT ID, Gebruikersnaam, Wachtwoord  FROM gebruikers WHERE Gebruikersnaam = ?";
+        $sql = "SELECT ID, Gebruikersnaam, Wachtwoord, GebruikerType  FROM gebruikers WHERE Gebruikersnaam = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $usertype);
                     if(mysqli_stmt_fetch($stmt)){
                         if($hashed_password === $_POST['password']){
                             // Password is correct, so start a new session
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
-                            
+                            $_SESSION["usertype"] = $usertype;
                             // Redirect user to welcome page
                             header("location: index.php");
                         } else{
@@ -83,6 +83,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($link);
 }
+
+
 ?>
 
 <!doctype html>
@@ -100,6 +102,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="css/footer.css"
     <link rel="stylesheet" href="css/index.css"
     <title>Hello, world!</title>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+    function onSubmit(token) {
+        document.getElementById("captcha").submit();
+    }
+</script>
 </head>
 <body class="bg-primary darken-grey-text">
 
@@ -131,6 +140,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li class="nav-item">
                     <a class="nav-link" href="Contact.php">Contact</a>
                 </li><?php
+                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+
+                    if($_SESSION["usertype"] == "admin"){
+                        echo "<li class='nav-item'>
+                            <a class='nav-link' href='adminpage.php'>Coach Pagina</a>
+                            </li>";
+                
+                    }
+                
+                
+                }
                 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     //header("location: login.php");
                     //exit;
@@ -201,12 +221,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         </div>";
 }else{
 ?>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-        function onSubmit(token) {
-            document.getElementById("captcha").submit();
-        }
-    </script>
         <div class="wrapper">
         <h2>Login</h2>
         <p>Vul hier je gebruikersnaam en wachtwoord in!</p>
@@ -232,74 +246,50 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 </div>
 
-<!--    footer-->
-    <!-- Grid row -->
-    <div class="footer" id="footer">
 
-        <!-- Grid column -->
-        <div class="col-md-12 mb-4">
 
-            <!--Footer-->
-            <footer class="page-footer blue text-center text-md-left mt-0">
+<!-- Footer -->
+<section id="footer" class="footer">
+    <div class="container">
+        <div class="row text-center text-xs-center text-sm-left text-md-left">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>links</h5>
+                <ul class="list-unstyled quick-links">
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Aanmelden</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Blindtypen</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Dyslexie</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Over ons</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Ervaringen</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>De cursus</a></li>
+                    <li><a href="https://www.fiverr.com/share/qb8D02"><i class="fa fa-angle-double-right"></i>Contact</a></li>
 
-                <!--Footer Links-->
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <!--First column-->
-                        <div class="col-md-6">
-                            <h5 class="title mb-3">TypenSneek</h5>
-                            <p>               Pinksterbloem 26 <br>
-                                8607 DV SNEEK<br>
-                                0515 - 419424<br>
-                                <br><br> </p>
-                        </div>
-                        <!--/.First column-->
-
-                        <!--Second column-->
-                        <div class="col-md-3">
-                            <h5 class="list-unstyled quick-links">Links</h5>
-                            <ul>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i>Aanmelden</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i>Blindtypen</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i>Dyslexie</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i>Over ons</a></li>
-
-                            </ul>
-                        </div>
-
-                        <div class="col-md-3">
-                            <h5 class="list-unstyled quick-links"><br></h5>
-                            <ul>
-
-                                <li><a href=""><i class="fa fa-angle-double-right"></i>Ervaringen</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i>De cursus</a></li>
-                                <li><a href=""><i class="fa fa-angle-double-right"></i>Contact</a></li>
-                            </ul>
-                        </div>
-                        <!--/.Second column-->
-                    </div>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h5>Contact</h5>
+                <!-- Google Map -->
+                <div style="width: 350px;position: relative;"><iframe width="350" height="170" src="https://maps.google.com/maps?width=350&amp;height=120&amp;hl=en&amp;q=Pinksterbloem%2026+(Typen%20Sneek)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
+                        <small style="line-height: 1.8;font-size: 2px;background: #fff;">
+                        </small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
                 </div>
-                <!--/.Footer Links-->
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <br><br><br>
+                Pinksterbloem 26 <br>
+                8607 DV SNEEK<br>
+                0515 - 419424<br>
+                <br><br>
+                <button type="button" class="btn btn-outline-primary" >Stuur een bericht</button>
 
-                <!--Copyright-->
-                <div class="footer-copyright">
-                    <div class="container-fluid">
-                        © 2020 Copyright: <a href="index.php"> TypenSneek.nl </a>
 
-                    </div>
-                </div>
-                <!--/.Copyright-->
-
-            </footer>
-            <!--/.Footer-->
-
+            </div>
         </div>
-        <!-- Grid column -->
-    </div>
-    <!-- Grid row -->
-    <!-- ./Footer -->
 
+    </div>
+</section>
+
+<!-- ./Footer -->
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

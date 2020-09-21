@@ -25,9 +25,6 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="OverOns.php">Over ons</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="Blindtypen.php">Blindtypen</a>
                 </li>
                 <li class="nav-item">
