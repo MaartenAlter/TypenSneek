@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT ID, Gebruikersnaam, Wachtwoord  FROM gebruikers WHERE Gebruikersnaam = ?";
+        $sql = "SELECT ID, Gebruikersnaam, Wachtwoord, GebruikerType  FROM gebruikers WHERE Gebruikersnaam = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -49,7 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $usertype);
                     if(mysqli_stmt_fetch($stmt)){
                         if($hashed_password === $_POST['password']){
                             // Password is correct, so start a new session
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;                            
-                            
+                            $_SESSION["usertype"] = $usertype;
                             // Redirect user to welcome page
                             header("location: index.php");
                         } else{
@@ -83,6 +83,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($link);
 }
+
+
 ?>
 
 <!doctype html>
@@ -130,6 +132,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <li class="nav-item">
                     <a class="nav-link" href="Contact.php">Contact</a>
                 </li><?php
+                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+
+                    if($_SESSION["usertype"] == "admin"){
+                        echo "<li class='nav-item'>
+                            <a class='nav-link' href='adminpage.php'>Coach Pagina</a>
+                            </li>";
+                
+                    }
+                
+                
+                }
                 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     //header("location: login.php");
                     //exit;
