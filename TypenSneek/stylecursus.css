@@ -1,6 +1,6 @@
 body {
-  background-color: #fe9801;
-  color: black;
+  background-color: #101820FF;
+  color: white;
   text-align: center;
 }
 
@@ -13,7 +13,7 @@ body {
 .heading {
   margin-bottom: 20px;
   font-size: 3rem;
-  color: black;
+  color: white;
 }
 
 .header {
@@ -23,7 +23,7 @@ body {
 
 .timer, .errors,
 .accuracy, .cpm, .wpm {
-  background-color: #ccda46;
+  background-color: #FEE715FF;
   height: 60px;
   width: 70px;
   margin: 8px;
@@ -49,7 +49,7 @@ body {
 }
 
 .quote {
-  background-color: #ccda46;
+  background-color: #FEE715FF;
   font-size: 1.5rem;
   margin: 10px;
   padding: 25px;
