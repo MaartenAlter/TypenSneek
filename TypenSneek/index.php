@@ -1,4 +1,4 @@
-<?php 
+    <?php 
 // Initialize the session
 session_start();
  
@@ -208,7 +208,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 Heeft u na het lezen van onze website nog vragen, neem dan gerust contact met ons op, wij zullen proberen al uw vragen te beantwoorden.
             </p>
             <br>
-            <button type="button" formaction="Contact.php" class="btn btn-primary btn-lg rounded-pill">Neem contact op!</button>
+
+
+
+
+
+            <p> U kunt de cursus ook online volgen.
+                Succes is verzekerd. Tot nu toe hebben alle cursisten de cursus met goed resultaat afgerond.
+
+                Deze cursus bestaat ook uit 9 lessen. Elke les heeft 8 dagen met opdrachten. Na de laatste opdracht volgt een toets. Aan het einde van de cursus volgt het examen.
+
+                De cursist logt in met een persoonlijk wachtwoord.
+
+                De cursist kan zelf het moment kiezen van de lestijd.
+
+                Ook voor de online cursus is het nodig om 20 á 30 minuten per dag te typen.
+
+                De toets wordt automatisch nagekeken.
+
+                Direct na elke oefening ontvangt u terugkoppeling van de resultaten.
+
+                Wij coachen de cursist online. De cursist kan online vragen stellen en deze worden ook online beantwoord. Ook is het mogelijk dat de online coach contact zoekt met de cursist.
+
+                Lettergrootte van de tekst is aan te passen, speciaal voor dyslexie. </p>
+            <br>
+            <p>
+                Wij werken met een beloningssysteem. Dit werkt erg motiverend.
+
+                Op elke plaats waar internet is, kan gewerkt worden.
+
+                De cursus wordt aangeboden voor
+                € 125,00. Dit is inclusief examen.
+
+                Het examen kan thuis gemaakt worden.
+                Er is ook een mogelijkheid om het examen in ons eigen cursuslokaal te maken. U kunt hiervoor contact met ons opnemen.
+
+                Oefening klaar, zoek de typespelletjes op!
+
+
+                Probeer eens de onderstaande proefles!
+
+                Het kan zijn dat het programma niet goed werkt met Internet Explorer.
+                Installeer dan Google Chrome of Firefox voor een goede werking!
+
+            </p>
+<br>
+            <br>
+            <button type="button" formaction="Contact.php" class="btn btn-primary btn-lg rounded-pill ">Neem contact op!</button>
+            <button type="button" formaction="Contact.php" class="btn btn-primary btn-lg rounded-pill">Doe een proefles</button>
 
 
         </div>
@@ -226,6 +273,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             </p>
             <br>
             <button type='button' class='btn btn-outline-primary' href='DeCursus.php'>Cursus</button>
+
         </div>";
 }else{
 ?>
@@ -248,9 +296,17 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <input type="submit" class="btn btn-primary rounded-pill" value="Login">
 <!--                <button id="custom-button" type="submit" value="Login" class="g-recaptcha" data-sitekey="6Lcs1swZAAAAAC6EQaUBZMtU0wm58efdk5uR1vAT" data-callback='onSubmit' data-action='submit'>Login</button>-->
             </div>
+
+            <div>
+                <br>
+                <hr>
+                <br>
+                <img src="img/foto5.jpg" alt="ja" class="img-thumbnail rounded mx-auto d-block" >
+            </div>
         </div>
 
 <?php } ?>
+
 
 
 </div>
