@@ -130,7 +130,7 @@ function finishGame() {
   input_area.disabled = true;
 
   // show finishing text
-  quote_text.textContent = "Click on restart to start a new game.";
+  quote_text.textContent = "Klik op opnieuw om opnieuw te beginnen.";
 
   // display restart button
   restart_btn.style.display = "block";
