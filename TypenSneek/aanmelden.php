@@ -11,7 +11,7 @@ session_start();
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <!--    external css -->
-    <link rel="stylesheet" href="css/footer.css"
+    <link rel="stylesheet" href="css/footer.css">
     <title>Hello, world!</title>
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
