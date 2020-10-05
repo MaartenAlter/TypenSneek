@@ -1,4 +1,11 @@
-    <?php 
+<!--
+#A64AC9
+#FCCD04
+#FFB48F
+#F5E6CC
+#17E9E0
+-->
+    <?php
 // Initialize the session
 session_start();
  
@@ -106,7 +113,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!--    external css -->
     <link rel="stylesheet" href="css/footer.css"
     <link rel="stylesheet" href="css/index.css"
-    <title>Hello, world!</title>
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
@@ -115,9 +121,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 </script>
 </head>
-<body class="">
+<body style="background: #17E9E0">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-primary purple shadow fixed-top mx-auto " >
+<nav class="navbar navbar-expand-lg navbar-light  shadow fixed-top  mx-auto rounded" style="max-width: 1150px; background: #F5E6CC"  >
     <div class="container mx-auto ">
         <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
         <button class="navbar-toggler mx-auto " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -183,11 +189,80 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 </nav>
 
+<?php   
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    //header("location: login.php");
+    //exit;
 
 
-<div class="container" style="margin-top: 101px">
+
+    echo"<div class='container'>
+  <div class='row'>
+    <div class='col-sm'>
+              <div class='col-sm rounded p-3 ' style='margin-top:101px; background: #F5E6CC; max-width: 1100px' >
+           <h4 class='mx-auto'>Hoi, " . $_SESSION['username'] . "</h4>
+            <hr>
+            <p>
+                Leuk dat je er bent! De typcursus staat voor je klaar. Om te beginnen klik de knop hieronder. En voor vragen kun je altijd de online coach gebruiken.
+            </p>
+            <br>
+            <button type='button' class='btn btn-outline-primary' href='DeCursus.php'>Cursus</button>
+
+        </div>
+    </div>
+    <div class='col-sm'>
+          <div class='col-sm'>
+              <div class='col-sm rounded p-3 ' style='margin-top:101px; background: #F5E6CC; max-width: 1100px' >
+           <h4 class='mx-auto'>Vragen?</h4>
+            <hr>
+            <p>
+              Als je vragen of een opmerking hebt, kun je die stellen via de HulpCoach. klik op de knop hier onder!<br><br>
+            </p>
+            <br>
+            <button type='button' class='btn btn-outline-primary' href='DeCursus.php'>HulpCoach</button>
+
+        </div>
+    </div>
+</div>";
+//2e rij
+    echo"<div class='container'>
+  <div class='row'>
+    <div class='col-sm'>
+              <div class='col-sm rounded p-3 ' style='margin-top:50px; background: #F5E6CC; max-width: 1100px' >
+           <h4 class='mx-auto'>Coach Pagina</h4>
+            <hr>
+            <p>
+                Voor het overzicht van alle cursisten en de nieuwe aanmeldingen <br>
+                klik op de knop hieronder.
+                  
+            </p>
+            
+             .";if ($_SESSION["usertype"] == "admin"){
+                       echo "<a class='nav-link' href='adminpage.php'>Coach Pagina</a>";
+                        }; echo "
+
+        </div>
+    </div>
+    <div class='col-sm'>
+          <div class='col-sm'>
+              <div class='col-sm rounded p-3 ' style='margin-top:50px; background: #F5E6CC; max-width: 1100px' >
+           <h4 class='mx-auto'>Voorgang</h4>
+            <hr>
+            <p>
+              Tekst voor voortgang
+            </p>
+            <br>
+            <br>
+            <button type='button' class='btn btn-outline-primary' href='DeCursus.php'>Voortgang</button>
+
+        </div>
+    </div>
+</div>";
+
+}else{
+echo '<div class="container " style="margin-top: 101px">
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm rounded mr-5 p-3" style="background: #F5E6CC; color: #05386B;" >
            <h4 class="mx-auto" >Over ons</h4>
 
             <hr>
@@ -252,68 +327,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 Installeer dan Google Chrome of Firefox voor een goede werking!
 
             </p>
-<br>
             <br>
-            <button type="button" formaction="Contact.php" class="btn btn-primary btn-lg rounded-pill ">Neem contact op!</button>
-            <button type="button" formaction="Contact.php" class="btn btn-primary btn-lg rounded-pill">Doe een proefles</button>
-
-
-        </div>
-<?php   
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    //header("location: login.php");
-    //exit;
-    
-   echo "
-        <div class='col-sm'>
-           <h4 class='mx-auto'>Hoi, " . $_SESSION['username'] . "</h4>
-            <hr>
-            <p>
-                Leuk dat je er bent! De typcursus staat voor je klaar. Om te beginnen klik de knop hieronder. En voor vragen kun je altijd de online coach gebruiken.
-            </p>
             <br>
-            <button type='button' class='btn btn-outline-primary' href='DeCursus.php'>Cursus</button>
 
-        </div>";
-}else{
-?>
-        <div class="wrapper">
-        <h4>Login</h4>
-            <hr>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group rounded-pill <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Gebruikersnaam</label>
-                <input type="text" name="username" class="form-control rounded-pill border border-success" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group rounded-pill <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Wachtwoord</label>
-                <input type="password" name="password" class="form-control border border-success rounded-pill">
-                <span class="help-block"><?php echo $password_err; ?></span>
+            <div class="col-sm" >
+                <button type="button" formaction="Contact.php" class="btn btn-danger btn-lg rounded-pill ">Neem contact op!</button>
+                <button type="button" formaction="Contact.php" class="btn btn-danger btn-lg rounded-pill">Doe een proefles</button>
             </div>
-            <div class="form-group rounded-pill">
-                <input type="submit" class="btn btn-primary rounded-pill" value="Login">
-<!--                <button id="custom-button" type="submit" value="Login" class="g-recaptcha" data-sitekey="6Lcs1swZAAAAAC6EQaUBZMtU0wm58efdk5uR1vAT" data-callback='onSubmit' data-action='submit'>Login</button>-->
-            </div>
-
-            <div>
-                <br>
-                <hr>
-                <br>
-                <img src="img/foto5.jpg" alt="ja" class="img-thumbnail rounded mx-auto d-block" >
-            </div>
-        </div>
-
-<?php } ?>
-
-
-
-</div>
-
-
-
-    <footer style="margin-top: 200px">
+        </div>';
+        require "Preindex.php";
+        echo '<footer style="margin-top: 100px; background: #F5E6CC; margin-bottom: 10%;" class="rounded p-3">
         <div class="footer">
             <div class="container">
                 <div class="row">
@@ -364,6 +388,10 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>';
+}
+?>
+
+
 </body>
 </html>
