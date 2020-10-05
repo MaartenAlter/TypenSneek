@@ -59,7 +59,7 @@ if($_SESSION['usertype'] === "admin"){
                     <a class="nav-link bg-danger rounded-pill" href="Dyslexie.php">Dyslexie</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center ">
-                    <a class="nav-link bg-success rounded-pill " href="DeCursus.php ">De cursus</a>
+                    <a class="nav-link bg-success rounded-pill " href="lessen.php ">De cursus</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
                     <a class="nav-link bg-warning rounded-pill"  href="aanmelden.php">Aanmelden</a>
