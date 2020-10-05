@@ -13,7 +13,7 @@ session_start();
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--    external css -->
-    <link rel="stylesheet" href="css/footer.css"
+    <link rel="stylesheet" href="css/footer.css">
     <title>Hello, world!</title>
 </head>
 <body>
@@ -38,7 +38,7 @@ session_start();
                     <a class="nav-link bg-danger rounded-pill" href="Dyslexie.php">Dyslexie</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center ">
-                    <a class="nav-link bg-success rounded-pill " href="DeCursus.php ">De cursus</a>
+                    <a class="nav-link bg-success rounded-pill " href="lessen.php ">De cursus</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
                     <a class="nav-link bg-warning rounded-pill"  href="aanmelden.php">Aanmelden</a>
