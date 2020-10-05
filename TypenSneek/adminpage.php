@@ -38,8 +38,8 @@ if($_SESSION['usertype'] === "admin"){
 
     <title>AdminPage</title>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-primary purple shadow fixed-top mx-auto " >
+<body style="background: #17E9E0">
+<nav class="navbar navbar-expand-lg navbar-light  shadow fixed-top  mx-auto rounded" style="max-width: 1150px; background: #F5E6CC"  >
     <div class="container mx-auto ">
         <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
         <button class="navbar-toggler mx-auto " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,22 +50,22 @@ if($_SESSION['usertype'] === "admin"){
 
 
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-warning rounded-pill" href="Blindtypen.php">Blindtypen</a>
+                    <a class="nav-link bg-warning rounded-pill"  style="color: black" href="Blindtypen.php">Blindtypen</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-success rounded-pill" href="Ervaringen.php">Ervaringen</a>
+                    <a class="nav-link bg-success rounded-pill" style="color: black" href="Ervaringen.php">Ervaringen</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-danger rounded-pill" href="Dyslexie.php">Dyslexie</a>
+                    <a class="nav-link bg-danger rounded-pill" style="color: black" href="Dyslexie.php">Dyslexie</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center ">
-                    <a class="nav-link bg-success rounded-pill " href="lessen.php ">De cursus</a>
+                    <a class="nav-link bg-success rounded-pill " style="color: black" href="lessen.php ">De cursus</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-warning rounded-pill"  href="aanmelden.php">Aanmelden</a>
+                    <a class="nav-link bg-warning rounded-pill" style="color: black"  href="aanmelden.php">Aanmelden</a>
                 </li>
                 <li class="nav-item  mx-1 pt-2 text-center">
-                    <a class="nav-link bg-danger rounded-pill" href="Contact.php">Contact</a>
+                    <a class="nav-link bg-danger rounded-pill" style="color: black" href="Contact.php">Contact</a>
                 </li><?php
                 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
@@ -104,12 +104,13 @@ if($_SESSION['usertype'] === "admin"){
         </div>
     </div>
 </nav>
+
 <br>
 <br>
 <br>
 <br>
 <br>
-<div style='padding-left: 10px; padding-right: 10px;'>
+<div style='background: #F5E6CC;'>
 
     <h2> Aanmeldingen </h2>
     <hr>
@@ -127,7 +128,7 @@ if($_SESSION['usertype'] === "admin"){
 <th scope='col'>Woonplaats</th>
 <th scope='col'>School</th>
 <th scope='col'>Opmerking</th>
-<th scope='col'>Gemaakt op</th>
+<th scope='col'>Gemaakt</th>
 <th scope='col'>Registreeren</th>
 <th scope='col'>Verwijderen</th>
 </tr>";
