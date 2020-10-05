@@ -28,7 +28,7 @@ if (!$conn) {
     <div class="header">
       <div class="wpm">
         <div class="header_text">WPM</div>
-        <div class="curr_wpm"> <input type="hidden" name="wpm" value="100"></div>
+        <div class="curr_wpm"> 100 </div>
       </div>
       <div class="cpm">
         <div class="header_text">APM</div>
@@ -52,7 +52,7 @@ if (!$conn) {
     <textarea class="input_area" placeholder="start met typen..." oninput="processCurrentText()"
       onfocus="startGame()"></textarea>
     <button  name="next" class="restart_btn"><a href="lessen.php"> Volgende </a></button>
-    <input type="submit" name="save" value="opslaan">
+   
      </form>
   </div>
   <script src="script.js"></script>
