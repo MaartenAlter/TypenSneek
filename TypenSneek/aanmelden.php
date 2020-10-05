@@ -12,7 +12,7 @@ session_start();
 
 <!--    external css -->
     <link rel="stylesheet" href="css/footer.css">
-    <title>Hello, world!</title>
+    <title>Typensneek</title>
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>

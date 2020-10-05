@@ -1,5 +1,5 @@
 // define the time limit
-let TIME_LIMIT = 60;
+let TIME_LIMIT = 0;
 
 // define quotes to be used
 let quotes_array = [
@@ -49,6 +49,7 @@ function updateQuote() {
     quoteNo = 0;
 }
 
+
 function processCurrentText() {
 
   // get current input text and split it
@@ -95,7 +96,7 @@ function processCurrentText() {
   // if current text is completely typed
   // irrespective of errors
   if (curr_input.length == current_quote.length) {
-    updateQuote();
+    finishGame();
 
     // update total errors
     total_errors += errors;
@@ -106,9 +107,9 @@ function processCurrentText() {
 }
 
 function updateTimer() {
-  if (timeLeft > 0) {
+  if (timeLeft < 1000) {
     // decrease the current time left
-    timeLeft--;
+    timeLeft++;
 
     // increase the time elapsed
     timeElapsed++;
@@ -116,10 +117,7 @@ function updateTimer() {
     // update the timer text
     timer_text.textContent = timeLeft + "s";
   }
-  else {
-    // finish the game
-    finishGame();
-  }
+
 }
 
 function finishGame() {
@@ -130,7 +128,7 @@ function finishGame() {
   input_area.disabled = true;
 
   // show finishing text
-  quote_text.textContent = "Klik op opnieuw om opnieuw te beginnen.";
+  quote_text.textContent = "Klik op volgende voor de volgende oefening";
 
   // display restart button
   restart_btn.style.display = "block";
@@ -160,6 +158,8 @@ function startGame() {
 }
 
 function resetValues() {
+
+  
   timeLeft = TIME_LIMIT;
   timeElapsed = 0;
   errors = 0;
@@ -170,7 +170,7 @@ function resetValues() {
   input_area.disabled = false;
 
   input_area.value = "";
-  quote_text.textContent = 'Click on the area below to start the game.';
+  quote_text.textContent = 'Klik hieronder om te starten!';
   accuracy_text.textContent = 100;
   timer_text.textContent = timeLeft + 's';
   error_text.textContent = 0;
