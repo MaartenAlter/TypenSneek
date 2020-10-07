@@ -23,7 +23,7 @@ if($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user" ){
         <title>TypenSneek</title>
 </head>
 <body>
-<a href="index.php">Home</a>
+<button onclick="window.location.href='index.php'" class="btn btn-primary">Terug</button>
 
 <h2 style="margin-left: 5%; margin-top:2%;">Les 1</h2>
 <table class="table" style="width: 60%; margin-left: 5%;" >
