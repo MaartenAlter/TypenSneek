@@ -2,9 +2,10 @@
 let TIME_LIMIT = 0;
 
 // define quotes to be used
-let quotes_array = [
-  "j j j j j jj jj jj jj jj jjj jjj jjj jjj jjj j jj jjj j jj jjj j j j jj jj jj jjj jjj jjj jj jj jj j j j jj jjj j jj j jjj jj j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj"
-];
+let quotes_array = document.getElementById("course").innerHTML;
+// let quotes_array = [
+//   "j j j j j jj jj jj jj jj jjj jjj jjj jjj jjj j jj jjj j jj jjj j j j jj jj jj jjj jjj jjj jj jj jj j j j jj jjj j jj j jjj jj j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj"
+// ];
 
 // selecting required elements
 let timer_text = document.querySelector(".curr_time");
@@ -32,7 +33,7 @@ let timer = null;
 
 function updateQuote() {
   quote_text.textContent = null;
-  current_quote = quotes_array[quoteNo];
+  current_quote = quotes_array;
 
   // separate each character and make an element 
   // out of each of them to individually style them

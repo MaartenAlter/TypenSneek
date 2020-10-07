@@ -20,7 +20,7 @@ if (!$conn) {
   <link rel="stylesheet" href="stylecursus.css">
       
 </head>
-
+<p hidden id="course">j j j j j jj jj jj jj jj jjj jjj jjj jjj jjj j jj jjj j jj jjj j j j jj jj jj jjj jjj jjj jj jj jj j j j jj jjj j jj j jjj jj j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
 <body>
 <form action="" method="post" >
   <div class="container">
@@ -64,7 +64,7 @@ if (!$conn) {
 
 
 
-if(isset($_POST['save'])){
+if(isset($_POST['volgende'])){
   
     $wpm = $_POST['wpm'];
     // $apm = ;
