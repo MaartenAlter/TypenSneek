@@ -123,67 +123,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body style="background: #17E9E0">
 
-<nav class="navbar navbar-expand-lg navbar-light  shadow fixed-top  mx-auto rounded" style="max-width: 1150px; background: #F5E6CC"  >
-    <div class="container mx-auto ">
-        <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
-        <button class="navbar-toggler mx-auto " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-        </button>
-        <div class="collapse navbar-collapse mxt-4 pt-1" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto ">
 
-
-                <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-warning rounded-pill"  style="color: black" href="Blindtypen.php">Blindtypen</a>
-                </li>
-                <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-success rounded-pill" style="color: black" href="Ervaringen.php">Ervaringen</a>
-                </li>
-                <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-danger rounded-pill" style="color: black" href="Dyslexie.php">Dyslexie</a>
-                </li>
-                <li class="nav-item mx-1 pt-2 text-center ">
-                    <a class="nav-link bg-success rounded-pill " style="color: black" href="lessen.php ">De cursus</a>
-                </li>
-                <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-warning rounded-pill" style="color: black"  href="aanmelden.php">Aanmelden</a>
-                </li>
-                <li class="nav-item  mx-1 pt-2 text-center">
-                    <a class="nav-link bg-danger rounded-pill" style="color: black" href="Contact.php">Contact</a>
-                </li><?php
-                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-
-
-
-
-                }
-                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                    //header("location: login.php");
-                    //exit;
-
-                    echo "<form action='index.php' style='padding-left: 20px; margin-top: 8px' method='post'> <input type='submit' name='logout' value='Uitloggen' class='btn btn-primary bg-danger rounded-pill'> </form> ";
-
-                    if(isset($_POST['logout'])){
-                        // Initialize the session
-                        session_start();
-
-                        // Unset all of the session variables
-                        $_SESSION = array();
-
-                        // Destroy the session.
-                        session_destroy();
-
-                        // Redirect to login page
-                        header("location: index.php");
-                        exit;
-                    }
-                }
-                ?>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<?php
+include "include/navbar.php";
+?>
 <?php   
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     //header("location: login.php");
@@ -194,7 +137,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     echo "<div class='container'>
   <div class='row'>
     <div class='col-sm'>
-              <div class='col-sm rounded p-3 ' style='margin-top:101px; background: #ffffff; max-width: 1100px' >
+              <div class='col-sm rounded p-3 ' style='margin-top:101px; background: #F5E6CC; max-width: 1100px' >
            <h4 class='mx-auto'>Hoi, " . $_SESSION['username'] . "</h4>
             <hr>
             <p>
@@ -232,8 +175,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                   
             </p>
             
-             .";if ($_SESSION["usertype"] == "admin"){
-                       echo "<a class='nav-link' href='adminpage.php'>Coach Pagina</a>";
+             ";if ($_SESSION["usertype"] == "admin"){
+                       echo "<button type='button' class='btn-outline-danger btn border-2'><a class='nav-link' style='color: black' href='adminpage.php'>Coach Pagina</a></button>";
                         }; echo "
 
         </div>
@@ -332,7 +275,7 @@ echo '<div class="container " style="margin-top: 101px">
             </div>
         </div>';
         require "Preindex.php";
-        echo '<footer style="margin-top: 100px; background: #F5E6CC; margin-bottom: 10%;" class="rounded p-3">
+        echo '<footer style="margin-top: 70px; background: #F5E6CC; margin-bottom: 10%;" class="rounded p-3">
         <div class="footer">
             <div class="container" style="color: #05386B;">
                 <div class="row">
@@ -340,8 +283,8 @@ echo '<div class="container " style="margin-top: 101px">
                         <h3>Menu</h3>
                         <hr>
 
-                        <ul class="column list-unstyled" style="text-decoration: none;">
-                            <li><a href=""><i class="fa fa-angle-double-right" style="text-decoration: none; color: black"></i>Aanmelden</a></li>
+                        <ul class="column list-unstyled">
+                            <li><a href=""><i class="fa fa-angle-double-right"></i>Aanmelden</a></li>
                             <li><a href=""><i class="fa fa-angle-double-right"></i>Blindtypen</a></li>
                             <li><a href=""><i class="fa fa-angle-double-right"></i>Dyslexie</a></li>
                             <li><a href=""><i class="fa fa-angle-double-right"></i>Over ons</a></li>

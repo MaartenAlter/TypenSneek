@@ -38,7 +38,7 @@ if($_SESSION['usertype'] === "admin"){
 
     <title>AdminPage</title>
 </head>
-<body style="background: #17E9E0">
+<body style="background: #ffffff">
 <nav class="navbar navbar-expand-lg navbar-light  shadow fixed-top  mx-auto rounded" style="max-width: 1150px; background: #F5E6CC"  >
     <div class="container mx-auto ">
         <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
@@ -110,7 +110,7 @@ if($_SESSION['usertype'] === "admin"){
 <br>
 <br>
 <br>
-<div style='background: #F5E6CC;'>
+<div>
 
     <h2> Aanmeldingen </h2>
     <hr>
@@ -184,7 +184,7 @@ if($_SESSION['usertype'] === "admin"){
 
                 $sql = "UPDATE gebruikers SET Gebruikersnaam= '$username', Wachtwoord= '$password', Aangemeld= 1 WHERE ID=" .$_GET['id'];
                 $result = mysqli_query($conn, $sql);
-                header("Location: adminpage.php");
+//                header("Location: index.php");
             }
 
 
