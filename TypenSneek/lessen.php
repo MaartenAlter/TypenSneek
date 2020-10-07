@@ -31,12 +31,12 @@ session_start();
   <tbody>
     <tr>
       <td scope="row">1</td>
-      <td></td>
+      <td>	&#11088; &#11088;	&#11088;</td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
     </tr>
     <tr>
       <td scope="row">2</td>
-      <td></td>
+      <td>	&#11088; 	&#11088;</td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
     </tr>
     <tr>
@@ -116,6 +116,54 @@ session_start();
   </tbody>
 </table>
 
+
+<h2 style="margin-left: 5%; margin-top:2%;">Les 3</h2>
+<table class="table" style="width: 60%; margin-left: 5%;" >
+  <thead>
+    <tr>
+      <th scope="col">Oefening</th>
+      <th scope="col">Resultaat</th>
+      <th scope="col">Maken</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">1</td>
+      <td></td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+    </tr>
+    <tr>
+      <td scope="row">2</td>
+      <td></td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+    </tr>
+    <tr>
+      <td scope="row">3</td>
+      <td></td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+    </tr>
+    <tr>
+      <td scope="row">4</td>
+      <td></td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+    </tr>
+    <tr>
+      <td scope="row">5</td>
+      <td></td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+    </tr>
+    <tr>
+      <td scope="row">6</td>
+      <td></td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+    </tr>
+    <tr>
+      <td scope="row">7</td>
+      <td></td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+    </tr>
+  </tbody>
+</table>
 
 </body>
 </html>

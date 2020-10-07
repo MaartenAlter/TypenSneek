@@ -1,11 +1,7 @@
-<!--
-#A64AC9
-#FCCD04
-#FFB48F
-#F5E6CC
-#17E9E0
+<!--coded: Alexander Riemersma
+    @php storm
 -->
-    <?php
+<?php
 // Initialize the session
 session_start();
  
@@ -13,7 +9,7 @@ session_start();
 
  
 // Include config file
-require_once "config.php";
+require_once "include/config.php";
  
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -126,8 +122,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <?php
 include "include/navbar.php";
-?>
-<?php   
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     //header("location: login.php");
     //exit;
@@ -274,7 +268,7 @@ echo '<div class="container " style="margin-top: 101px">
                 <button type="button" formaction="Contact.php" class="btn btn-warning btn-lg rounded-pill" style="color: black">Doe een proefles</button>
             </div>
         </div>';
-        require "Preindex.php";
+        require "include/Preindex.php";
         echo '<footer style="margin-top: 70px; background: #F5E6CC; margin-bottom: 10%;" class="rounded p-3">
         <div class="footer">
             <div class="container" style="color: #05386B;">

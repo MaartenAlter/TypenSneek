@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light  shadow fixed-top  mx-auto rounded" style="max-width: 1150px; background: #F5E6CC"  >
+<nav class="navbar navbar-expand-lg navbar-light  shadow fixed-top  mx-auto rounded " style="max-width: 1150px; background: #F5E6CC"  >
     <div class="container mx-auto ">
-        <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="50" class="d-inline-block align-top" alt=""></a>
+        <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="60" class="d-inline-block align-top" alt=""></a>
         <button class="navbar-toggler mx-auto " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon "></span>
         </button>

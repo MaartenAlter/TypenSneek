@@ -22,7 +22,7 @@
             <br>
             <hr>
             <br>
-            <img src="img/foto5.jpg" alt="ja" class="img-thumbnail rounded mx-auto d-block" >
+            <img src="../img/foto5.jpg" alt="ja" class="img-thumbnail rounded mx-auto d-block" >
         </div>
 </div>
 </div>
