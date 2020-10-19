@@ -42,7 +42,7 @@ if (!$conn) {
 ?>
 <html>
 
-<body>
+<body style="background: #17E9E0 ">
 <br><br><br><br><br>
 <div class="container">
     <h3>Aanmelden: </h3>
@@ -88,7 +88,11 @@ if (!$conn) {
         <label for="exampleInputEmail1">Opmerking: </label>
         <input type="text" name="command" id="command" placeholder="Opmerking..." class="form-control">
     </div>
-    
+        <div>
+            <input type="checkbox" name="AVG" required >
+            <label for="exampleInputEmail1">Ik ga akkoord  met de AVG wet. </label>
+        </div>
+    <br>
     <input type="submit" value="Aanmaken" name="submit" class="btn btn-primary">
         <!-- Gebruikerstype Admin of gebruiker -->
         <!-- Gemaakt op -->
@@ -97,6 +101,11 @@ if (!$conn) {
         <!-- Aangemeld tinyint - 0 meegeven-->
    
     </form>
+
+    <?php
+    require "include/footer.php";
+    ?>
+
 <div>
 </body>
 </html>

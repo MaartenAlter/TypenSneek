@@ -121,6 +121,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 <?php
+
 include "include/navbar.php";
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     //header("location: login.php");
@@ -172,6 +173,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
              ";if ($_SESSION["usertype"] == "admin"){
                        echo "<button type='button' class='btn-outline-danger btn border-2'><a class='nav-link' style='color: black' href='adminpage.php'>Coach Pagina</a></button>";
                         }; echo "
+                
 
         </div>
     </div>
@@ -323,7 +325,6 @@ echo '<div class="container " style="margin-top: 101px">
     </footer>';
 }
 ?>
-
 
 </body>
 </html>
