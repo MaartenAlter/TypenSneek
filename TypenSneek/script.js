@@ -28,10 +28,11 @@ let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
 let timer = null;
+let score = 0;
 
 
 
-
+/* updaten course naar de volgende les?? */
 function updateQuote() {
   quote_text.textContent = null;
   current_quote = quotes_array;
@@ -51,7 +52,10 @@ function updateQuote() {
     quoteNo = 0;
 }
 
-
+/*
+* verwerkt input in les en geeft fouten aan 
+*
+*/
 function processCurrentText() {
 
   // get current input text and split it
@@ -146,6 +150,9 @@ function finishGame() {
   // display the cpm and wpm
   cpm_group.style.display = "block";
   wpm_group.style.display = "block";
+
+  // give score
+  score = wpm;
 }
 
 
@@ -179,4 +186,6 @@ function resetValues() {
   restart_btn.style.display = "none";
   cpm_group.style.display = "none";
   wpm_group.style.display = "none";
+
+  
 }
