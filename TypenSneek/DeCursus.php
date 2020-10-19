@@ -20,7 +20,9 @@ if (!$conn) {
   <link rel="stylesheet" href="stylecursus.css">
       
 </head>
-
+<p hidden id="course">j j j j j jj jj jj jj jj jjj jjj jjj jjj jjj j jj jjj j jj jjj 
+j j j jj jj jj jjj jjj jjj jj jj jj j j j jj jjj j jj j jjj jj
+j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
 <body>
 <form action="" method="post" >
   <div class="container">
@@ -28,7 +30,7 @@ if (!$conn) {
     <div class="header">
       <div class="wpm">
         <div class="header_text">WPM</div>
-        <div class="curr_wpm"> <input type="hidden" name="wpm" value="100"></div>
+        <div class="curr_wpm"> 100 </div>
       </div>
       <div class="cpm">
         <div class="header_text">APM</div>
@@ -50,9 +52,9 @@ if (!$conn) {
 
     <div class="quote">Klik hieronder om te beginnen.</div>
     <textarea class="input_area" placeholder="start met typen..." oninput="processCurrentText()"
-      onfocus="startGame()"></textarea>
+      onfocus="startGame()" onkeydown="return (event.keyCode!=8);"></textarea>
     <button  name="next" class="restart_btn"><a href="lessen.php"> Volgende </a></button>
-
+   
      </form>
   </div>
   <script src="script.js"></script>
@@ -64,7 +66,7 @@ if (!$conn) {
 
 
 
-if(isset($_POST['save'])){
+if(isset($_POST['volgende'])){
   
     $wpm = $_POST['wpm'];
     // $apm = ;
