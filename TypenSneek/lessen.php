@@ -6,6 +6,20 @@ if ($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user") {
 } else {
     header("Location: index.php");
 }
+
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "typensneek";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 ?>
 
 <html>
@@ -78,7 +92,6 @@ if ($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user") {
         <th scope="col">Resultaat</th>
         <th scope="col">Maken</th>
     </tr>
-<<<<<<< HEAD
   </thead>
 
   <tbody>
