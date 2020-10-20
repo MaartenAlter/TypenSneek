@@ -1,85 +1,88 @@
-<!--coded: Alexander Riemersma
-    @php storm
--->
 <?php
+/**
+ * Copyright (c) 2020.
+ * Alexander Riemersma
+ * Maarten Alter
+ */
+
 // Initialize the session
 session_start();
- 
+
 // Check if the user is already logged in, if yes then redirect him to welcome page
 
- 
+
 // Include config file
 require_once "include/config.php";
- 
+
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
- 
+
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Check if username is empty
-    if(empty(trim($_POST["username"]))){
+    if (empty(trim($_POST["username"]))) {
 //        $username_err = "Vul uw gebruikersnaam in.";
         $username_err = "<div class='alert alert-danger' role='alert'> fout! </div> ";
-    } else{
+    } else {
         $username = trim($_POST["username"]);
     }
-    
+
     // Check if password is empty
-    if(empty(trim($_POST["password"]))){
+    if (empty(trim($_POST["password"]))) {
 //        $password_err = "Vul uw wachtwoord in.";
         $password_err = " <br> <div class='alert alert-danger' role='alert'> Vul uw wachtwoord in. </div> ";
 
-    } else{
+    } else {
         $password = trim($_POST["password"]);
     }
-    
+
     // Validate credentials
-    if(empty($username_err) && empty($password_err)){
+    if (empty($username_err) && empty($password_err)) {
         // Prepare a select statement
         $sql = "SELECT ID, Gebruikersnaam, Wachtwoord, GebruikerType  FROM gebruikers WHERE Gebruikersnaam = ?";
-        
-        if($stmt = mysqli_prepare($link, $sql)){
+
+        if ($stmt = mysqli_prepare($link, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
+
             // Set parameters
             $param_username = $username;
-            
+
             // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
+            if (mysqli_stmt_execute($stmt)) {
                 // Store result
                 mysqli_stmt_store_result($stmt);
-                
+
                 // Check if username exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
+                if (mysqli_stmt_num_rows($stmt) == 1) {
                     // Bind result variables
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $usertype);
-                    if(mysqli_stmt_fetch($stmt)){
-                        if($hashed_password === $_POST['password']){
+                    if (mysqli_stmt_fetch($stmt)) {
+                        if ($hashed_password === $_POST['password']) {
                             // Password is correct, so start a new session
                             session_start();
-                            
+
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
+                            $_SESSION["username"] = $username;
                             $_SESSION["usertype"] = $usertype;
                             // Redirect user to welcome page
                             header("location: index.php");
-                        } else{
+                        } else {
                             // Display an error message if password is not valid
                             $password_err = " <br> <div class='alert alert-danger' role='alert'> Het wachtwoord is niet geldig </div> ";
 
                         }
                     }
-                } else{
+                } else {
                     // Display an error message if username doesn't exist
 //                    $username_err = "Geen account gevonden met deze gebruikersnaam.";
                     $username_err = " <br> <div class='alert alert-danger' role='alert'> Geen account gevonden met deze gebruikersnaam. </div> ";
                 }
-            } else{
+            } else {
                 echo "Oeps! Er is wat fout gegaan.";
             }
 
@@ -87,14 +90,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             mysqli_stmt_close($stmt);
         }
     }
-    
+
     // Close connection
     mysqli_close($link);
 }
 
 
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -106,16 +108,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<!--    external css -->
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/index.css">
+    <!--    external css -->
+    <link rel="stylesheet" href="css/footer.css"
+    <link rel="stylesheet" href="css/index.css"
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
-    function onSubmit(token) {
-        document.getElementById("captcha").submit();
-    }
-</script>
+        function onSubmit(token) {
+            document.getElementById("captcha").submit();
+        }
+    </script>
 </head>
 <body style="background: #17E9E0">
 
@@ -123,12 +125,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <?php
 
 include "include/navbar.php";
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     //header("location: login.php");
     //exit;
-
-
-
     echo "<div class='container'>
   <div class='row'>
     <div class='col-sm'>
@@ -158,11 +157,11 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     </div>
 </div>";
 //2e rij
-    echo"<div class='container'>
+    echo "<div class='container'>
   <div class='row'>
     <div class='col-sm'>
               <div class='col-sm rounded p-3 ' style='margin-top:50px; background: #F5E6CC; max-width: 1100px' >
-           <h4 class='mx-auto'>Coach Pagina</h4>
+           <h4 class='mx-auto'>Aanmeldingen beheer</h4>
             <hr>
             <p>
                 Voor het overzicht van alle cursisten en de nieuwe aanmeldingen <br>
@@ -170,9 +169,11 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                   
             </p>
             
-             ";if ($_SESSION["usertype"] == "admin"){
-                       echo "<button type='button' class='btn-outline-danger btn border-2'><a class='nav-link' style='color: black' href='adminpage.php'>Coach Pagina</a></button>";
-                        }; echo "
+             ";
+    if ($_SESSION["usertype"] == "admin") {
+        echo "<button type='button' class='btn-outline-danger btn border-2'><a class='nav-link' style='color: black' href='adminpage.php'>Beheer</a></button>";
+    };
+    echo "
                 
 
         </div>
@@ -180,21 +181,19 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <div class='col-sm'>
           <div class='col-sm'>
               <div class='col-sm rounded p-3 ' style='margin-top:50px; background: #F5E6CC; max-width: 1100px' >
-           <h4 class='mx-auto'>Opties</h4>
+           <h4 class='mx-auto'>CMS (pagina veranderen)</h4>
             <hr>
-<form method='post'>
-
-</form>
-            <br>
-            <br>
-            <button type='button' class='btn btn-outline-primary' href='DeCursus.php'>Voortgang</button>
+                <p>Verander de inhoud van pagina's</p>
+                <br>
+            <button type='button' class='btn-outline-danger btn border-2'><a class='nav-link' style='color: black' href='CMS/read.php'>CMS</a></button>
 
         </div>
     </div>
 </div>";
 
-}else{
-echo '<div class="container " style="margin-top: 101px">
+} else {
+
+    echo '<div class="container " style="margin-top: 101px">
     <div class="row">
         <div class="col-sm rounded mr-5 p-3" style="background: #F5E6CC; color: #05386B;" >
            <h4 class="mx-auto" >Over ons</h4>
@@ -270,8 +269,8 @@ echo '<div class="container " style="margin-top: 101px">
                 <button type="button" formaction="Contact.php" class="btn btn-warning btn-lg rounded-pill" style="color: black">Doe een proefles</button>
             </div>
         </div>';
-        require "include/Preindex.php";
-        echo '<footer style="margin-top: 70px; background: #F5E6CC; margin-bottom: 10%;" class="rounded p-3">
+    require "include/Preindex.php";
+    echo '<footer style="margin-top: 70px; background: #F5E6CC; margin-bottom: 10%;" class="rounded p-3">
         <div class="footer">
             <div class="container" style="color: #05386B;">
                 <div class="row">

@@ -1,4 +1,5 @@
-<footer style="margin-top: 70px; max-width: 1100px; background: #F5E6CC; margin-bottom: 10%;" class="rounded p-3 mx-auto">
+<footer style="margin-top: 70px; max-width: 1100px; background: #F5E6CC; margin-bottom: 10%;"
+        class="rounded p-3 mx-auto">
     <div class="footer">
         <div class="container" style="color: #05386B;">
             <div class="row">

@@ -1,6 +1,6 @@
-<?php 
+<?php
 session_start();
-?> 
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,7 +23,6 @@ include "include/navbar.php";
 ?>
 
 
-
 <div class="container" style="margin-top: 100px">
     <div class="row">
         <div class="col-sm">
@@ -40,8 +39,8 @@ include "include/navbar.php";
         <div class="col-sm">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                <p>Hartelijk bedankt voor alle goede zorgen, leuke lessen en super begeleiding.
-                    Groeten van Susan (en haar ouders)</p>
+                    <p>Hartelijk bedankt voor alle goede zorgen, leuke lessen en super begeleiding.
+                        Groeten van Susan (en haar ouders)</p>
 
                 </div>
             </div>
@@ -51,7 +50,8 @@ include "include/navbar.php";
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
 
-                    <p class="card-text">Bedankt voor de goede zorgen en fantastische resultaten die jullie hebben weten te behalen voor onze dochter Sanne-Rixt.</p>
+                    <p class="card-text">Bedankt voor de goede zorgen en fantastische resultaten die jullie hebben weten
+                        te behalen voor onze dochter Sanne-Rixt.</p>
 
                 </div>
             </div>
@@ -67,7 +67,8 @@ include "include/navbar.php";
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
 
-                    <p class="card-text">Omdat ik nu blind kan typen had ik veel meer tijd voor mijn werkstuk. De eerste keer een 5,5 en nu had ik een 8. Hier ben ik heel blij mee. Ruben</p>
+                    <p class="card-text">Omdat ik nu blind kan typen had ik veel meer tijd voor mijn werkstuk. De eerste
+                        keer een 5,5 en nu had ik een 8. Hier ben ik heel blij mee. Ruben</p>
 
                 </div>
             </div>
@@ -77,7 +78,8 @@ include "include/navbar.php";
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
 
-                    <p class="card-text">Ik moest van mijn ouders op typeles. Het huiswerk was niet altijd even leuk, maar ik ben nu toch heel blij dat ik blind kan typen. Bedankt. Maarten</p>
+                    <p class="card-text">Ik moest van mijn ouders op typeles. Het huiswerk was niet altijd even leuk,
+                        maar ik ben nu toch heel blij dat ik blind kan typen. Bedankt. Maarten</p>
 
                 </div>
             </div>
@@ -87,7 +89,9 @@ include "include/navbar.php";
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
 
-                    <p class="card-text">Bedankt dat jullie toch nog een mogelijkheid hebben gevonden dat Sanne de lessen kon volgen. Fantastisch! Sanne kan nu goed typen en wij zijn heel trots. Anneke en Marco de Boer
+                    <p class="card-text">Bedankt dat jullie toch nog een mogelijkheid hebben gevonden dat Sanne de
+                        lessen kon volgen. Fantastisch! Sanne kan nu goed typen en wij zijn heel trots. Anneke en Marco
+                        de Boer
                     </p>
 
                 </div>
@@ -97,8 +101,6 @@ include "include/navbar.php";
 
     </div>
 </div>
-
-
 
 
 <?php
