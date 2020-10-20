@@ -32,6 +32,7 @@ if (!$conn) {
 
 <html>
 <head>
+
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,6 +49,50 @@ if (!$conn) {
 <body>
 <button onclick="window.location.href='index.php'" class="btn btn-primary">Terug</button>
 
+<?php 
+    if(isset($_POST['submit'])){
+        $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = "  .$_SESSION['id']);
+        echo "<div class='table-responsive' > 
+        
+        <table class='table table-striped'>
+        <tr >
+        <th scope='col'>Aanslagen per minuut</th>
+        <th scope='col'>Woorden per minuut</th>
+        <th scope='col'>Tijd</th>
+        <th scope='col'>Fouten</th>
+        <th scope='col'>Accuraatheid</th>
+        <th scope='col'>Les</th>
+        <th scope='col'>Oefening</th>
+        <button type='button' class='close' aria-label='Close' onclick= window.location.href='lessen.php'><span aria-hidden='true'>&times;</span></button>
+
+        </tr>";
+
+        while($row = mysqli_fetch_array($result))
+        {
+            echo "<form action='adminpage.php' method='POST'>";
+            echo "<tr>";
+            echo "<td>" . $row['apm'] . "</td>";
+            echo "<td>" . $row['wpm'] . "</td>";
+            echo "<td>" . $row['tijd'] . "</td>";
+            echo "<td>" . $row['fouten'] . "</td>";
+            echo "<td>" . $row['accuraatheid'] . "%</td>";
+            echo "<td>" . $row['les'] . "</td>";
+            echo "<td>" . $row['oefening'] . "</td>";
+            echo "</tr>";
+
+
+          
+        }
+        
+        echo "</table>";
+        echo " </form>";
+        echo " </div>";
+      }
+
+?>
+
+
+
 <h2 style="margin-left: 5%; margin-top:2%;">Les 1</h2>
 <table class="table" style="width: 60%; margin-left: 5%;" >
   <thead>
@@ -58,6 +103,7 @@ if (!$conn) {
       <th scope="col">Resultaat</th>
     </tr>
   </thead>
+
   <tbody>
     <tr>
       <td scope="row">1</td>
@@ -95,7 +141,12 @@ if (!$conn) {
   
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
       <td>
-      <button type="button" class="btn btn-primary" onclick="">Resultaat</button>
+          <form action="lessen.php" method="post">
+          <input type="submit" name="submit" id="1" placeholder="Resultaat">
+          </form>
+            
+          
+        
       
       </td>
     </tr>
