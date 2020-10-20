@@ -17,9 +17,9 @@ if (!$conn) {
 session_start();
 
 
-if($_SESSION['usertype'] === "admin"){
+if ($_SESSION['usertype'] === "admin") {
 
-}else{
+} else {
     header("Location: index.php");
 }
 
@@ -53,7 +53,7 @@ include "include/navbar.php";
     <h2> Aanmeldingen </h2>
     <hr>
     <?php
-    $result = mysqli_query($conn,"SELECT * FROM gebruikers WHERE Aangemeld = 0 ");
+    $result = mysqli_query($conn, "SELECT * FROM gebruikers WHERE Aangemeld = 0 ");
     echo "<table class='table table-striped'>
 <tr >
 <th scope='col'>Voornaam</th>
@@ -71,8 +71,7 @@ include "include/navbar.php";
 <th scope='col'>Verwijderen</th>
 </tr>";
 
-    while($row = mysqli_fetch_array($result))
-    {
+    while ($row = mysqli_fetch_array($result)) {
         echo "<form action='adminpage.php' method='POST'>";
         echo "<tr>";
         echo "<td>" . $row['Voornaam'] . "</td>";
@@ -88,8 +87,8 @@ include "include/navbar.php";
         echo "<td>" . $row['GemaaktOp'] . "</td>";
 //echo "<td>" . "<input type='text' name='username'  id=" .$row['ID']."   >" . "</td>";
 //echo "<td>" . "<input type='password' name='password' id=" .$row['ID']." >". "</td>";
-        echo "<td>" . "<a href='adminpage.php?action=accept&id=".$row['ID']. "'>registreer</a>" . "</td>";
-        echo "<td>" . "<a href='adminpage.php?action=delete&id=".$row['ID']."'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>verwijder</a>" . "</td>";
+        echo "<td>" . "<a href='adminpage.php?action=accept&id=" . $row['ID'] . "'>registreer</a>" . "</td>";
+        echo "<td>" . "<a href='adminpage.php?action=delete&id=" . $row['ID'] . "'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>verwijder</a>" . "</td>";
         echo "</tr>";
 
 
@@ -99,16 +98,16 @@ include "include/navbar.php";
 
 
     if (isset($_GET['action']) && $_GET['action'] === 'accept') {
-        $sql = "SELECT * FROM gebruikers WHERE id=" .$_GET['id'];
+        $sql = "SELECT * FROM gebruikers WHERE id=" . $_GET['id'];
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<h2>Registreren:</h2> 
-            <form action='adminpage.php?action=accept&id=".$_GET['id']."' method='POST'> <br>
-              Naam: ". $row['Voornaam']. "<br>
-              Achternaam: ". $row['Achternaam']. "<br>
-              Email: ". $row['Email']. "<br>
+            <form action='adminpage.php?action=accept&id=" . $_GET['id'] . "' method='POST'> <br>
+              Naam: " . $row['Voornaam'] . "<br>
+              Achternaam: " . $row['Achternaam'] . "<br>
+              Email: " . $row['Email'] . "<br>
             Gebruikersnaam: <input type='text'  required name='username' '><br>
             Wachtwoord:  <input type='password'  required name='password'  '><br>
             <input type='submit' name='Submit' value='Registreer' onClick='return confirm(/Weet u zeker dat u deze gebruiker wilt toevoegen?/) '><br>
@@ -120,11 +119,10 @@ include "include/navbar.php";
                 $username = $_POST['username'];
                 $password = $_POST['password'];
 
-                $sql = "UPDATE gebruikers SET Gebruikersnaam= '$username', Wachtwoord= '$password', Aangemeld= 1 WHERE ID=" .$_GET['id'];
+                $sql = "UPDATE gebruikers SET Gebruikersnaam= '$username', Wachtwoord= '$password', Aangemeld= 1 WHERE ID=" . $_GET['id'];
                 $result = mysqli_query($conn, $sql);
 //                header("Location: index.php");
             }
-
 
 
         }
@@ -132,7 +130,7 @@ include "include/navbar.php";
 
 
     if (isset($_GET['action']) && $_GET['action'] === 'delete') {
-        $sql = "DELETE FROM gebruikers WHERE  ID=" .$_GET['id'];
+        $sql = "DELETE FROM gebruikers WHERE  ID=" . $_GET['id'];
         $result = mysqli_query($conn, $sql);
         header("Location: adminpage.php");
     }
@@ -143,10 +141,10 @@ include "include/navbar.php";
 </div>
 
 <h2>Geregistreerde gebruikers </h2>
-    <hr>
-    <?php
-    $result = mysqli_query($conn,"SELECT * FROM gebruikers WHERE Aangemeld = 1 ");
-    echo "<table class='table table-striped'>
+<hr>
+<?php
+$result = mysqli_query($conn, "SELECT * FROM gebruikers WHERE Aangemeld = 1 ");
+echo "<table class='table table-striped'>
 <tr >
 <th scope='col'>Voornaam</th>
 <th scope='col'>Achternaam</th>
@@ -163,31 +161,30 @@ include "include/navbar.php";
 <th scope='col'>Verwijderen</th>
 </tr>";
 
-    while($row = mysqli_fetch_array($result))
-    {
-        echo "<form action='adminpage.php' method='POST'>";
-        echo "<tr>";
-        echo "<td>" . $row['Voornaam'] . "</td>";
-        echo "<td>" . $row['Achternaam'] . "</td>";
-        echo "<td>" . $row['Email'] . "</td>";
-        echo "<td>" . $row['Telefoonnummer'] . "</td>";
-        echo "<td>" . $row['GeboorteDatum'] . "</td>";
-        echo "<td>" . $row['Straat'] . "</td>";
-        echo "<td>" . $row['Postcode'] . "</td>";
-        echo "<td>" . $row['Woonplaats'] . "</td>";
-        echo "<td>" . $row['School'] . "</td>";
-        echo "<td>" . $row['Opmerking'] . "</td>";
-        echo "<td>" . $row['GemaaktOp'] . "</td>";
+while ($row = mysqli_fetch_array($result)) {
+    echo "<form action='adminpage.php' method='POST'>";
+    echo "<tr>";
+    echo "<td>" . $row['Voornaam'] . "</td>";
+    echo "<td>" . $row['Achternaam'] . "</td>";
+    echo "<td>" . $row['Email'] . "</td>";
+    echo "<td>" . $row['Telefoonnummer'] . "</td>";
+    echo "<td>" . $row['GeboorteDatum'] . "</td>";
+    echo "<td>" . $row['Straat'] . "</td>";
+    echo "<td>" . $row['Postcode'] . "</td>";
+    echo "<td>" . $row['Woonplaats'] . "</td>";
+    echo "<td>" . $row['School'] . "</td>";
+    echo "<td>" . $row['Opmerking'] . "</td>";
+    echo "<td>" . $row['GemaaktOp'] . "</td>";
 //echo "<td>" . "<input type='text' name='username'  id=" .$row['ID']."   >" . "</td>";
 //echo "<td>" . "<input type='password' name='password' id=" .$row['ID']." >". "</td>";
-        echo "<td>" . "<a href='adminpage.php?action=accept&id=".$row['ID']. "'>registreer</a>" . "</td>";
-        echo "<td>" . "<a href='adminpage.php?action=delete&id=".$row['ID']."'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>verwijder</a>" . "</td>";
-        echo "</tr>";
+    echo "<td>" . "<a href='adminpage.php?action=accept&id=" . $row['ID'] . "'>registreer</a>" . "</td>";
+    echo "<td>" . "<a href='adminpage.php?action=delete&id=" . $row['ID'] . "'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>verwijder</a>" . "</td>";
+    echo "</tr>";
 
 
-    }
-    echo "</table>";
-    echo " </form>";
+}
+echo "</table>";
+echo " </form>";
 ?>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
