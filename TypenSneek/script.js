@@ -28,7 +28,7 @@ let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
 let timer = null;
-let score = 0;
+
 
 
 
@@ -96,9 +96,9 @@ function processCurrentText() {
 
   // update accuracy text
   let correctCharacters = (characterTyped - (total_errors + errors));
-  let accuracyVal = ((correctCharacters / characterTyped) * 100);
-  accuracy_text.textContent = Math.round(accuracyVal);
-
+  accuracy = ((correctCharacters / characterTyped) * 100);
+  accuracy_text.textContent = Math.round(accuracy);
+  
   // if current text is completely typed
   // irrespective of errors
   if (curr_input.length == current_quote.length) {
@@ -126,7 +126,25 @@ function updateTimer() {
 
 }
 
+function saveGame(vars, callback) {
+  $.ajax({
+      type: "POST",
+      url: "/TypenSneek/TypenSneek/TypenSneek/save.php",
+      data: vars,
+      dataType: "json",
+      success: function (data) {
+          callback(data);
+      },
+      error: function (data) {
+          console.log('[error] -> ' + data.responseText);
+      },
+      async: true
+  });
+}
+
+
 function finishGame() {
+  
   // stop the timer
   clearInterval(timer);
 
@@ -151,8 +169,25 @@ function finishGame() {
   cpm_group.style.display = "block";
   wpm_group.style.display = "block";
 
-  // give score
-  score = wpm;
+  saveGame({
+    wpm: wpm,
+    cpm: cpm,
+    errors: errors,
+    accuracy: Math.round(accuracy),
+    time: timeElapsed,
+    lesson: document.getElementById("lesson").innerHTML,
+    exercise: document.getElementById("exercise").innerHTML
+
+}, function (data) {
+    if (data.valid === true) {
+        // Data opslaan gelukt
+    }
+    else {
+      alert('Data opslaan mislukt!');
+    }
+});
+
+
 }
 
 

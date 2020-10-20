@@ -18,13 +18,16 @@ if (!$conn) {
 <head>
   <title>TypenSneek</title>
   <link rel="stylesheet" href="stylecursus.css">
-      
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <p hidden id="course">j j j j j jj jj jj jj jj jjj jjj jjj jjj jjj j jj jjj j jj jjj 
 j j j jj jj jj jjj jjj jjj jj jj jj j j j jj jjj j jj j jjj jj
 j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
+
+<p hidden id="lesson">1</p>
+<p hidden id="exercise">1</p>
 <body>
-<form action="" method="post" >
+<form action="" method="post" id="scoreForm" >
   <div class="container">
     <div class="heading">TypenSneek - Les 1 Oefening 1</div>
     <div class="header">
@@ -54,7 +57,7 @@ j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
     <textarea class="input_area" placeholder="start met typen..." oninput="processCurrentText()"
       onfocus="startGame()" onkeydown="return (event.keyCode!=8);"></textarea>
     <button  name="next" class="restart_btn"><a href="lessen.php"> Volgende </a></button>
-   
+ 
      </form>
   </div>
   <script src="script.js"></script>
@@ -62,31 +65,3 @@ j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
 </html>
 
 
-<?php
-
-
-
-if(isset($_POST['volgende'])){
-  
-    $wpm = $_POST['wpm'];
-    // $apm = ;
-    // $fouten =; 
-    // $tijd = ;
-    // $accuraatheid = ;
-  
-    echo $wpm;
-   // $userID = $_SESSION['ID'];
-    // $les = '1';
-    // $oefening = '1';
-
-    // $sql = "INSERT INTO progressie (apm, wpm, tijd, fouten, accuraatheid, Les, Oefening)
-    // VALUES ('$apm', '$wpm', '$tijd', '$fouten', '$accuraatheid', '$les', '$oefening')";
-    //  if (mysqli_query($conn, $sql)) {
-    //     echo "New record created successfully";
-    //   } else {
-    //     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    //   }
-    // mysqli_close($conn);
-
-}
-?>

@@ -107,8 +107,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <!--    external css -->
-    <link rel="stylesheet" href="css/footer.css"
-    <link rel="stylesheet" href="css/index.css"
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
@@ -132,7 +132,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     echo "<div class='container'>
   <div class='row'>
     <div class='col-sm'>
-              <div class='col-sm rounded p-3 ' style='margin-top:101px; background: #F5E6CC; max-width: 1100px' >
+              <div class='col-sm rounded p-3 ' style='margin-top:101px; background: #ffffe6; max-width: 1100px' >
            <h4 class='mx-auto'>Hoi, " . $_SESSION['username'] . "</h4>
             <hr>
             <p>

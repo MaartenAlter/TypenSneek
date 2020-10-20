@@ -6,6 +6,28 @@ if($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user" ){
 }else{
     header("Location: index.php");
 }
+
+
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "typensneek";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+
+
+  
+
+
+
 ?>
 
 <html>
@@ -20,6 +42,7 @@ if($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user" ){
 
         <!--    external css -->
         <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="style.css">
         <title>TypenSneek</title>
 </head>
 <body>
@@ -30,20 +53,57 @@ if($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user" ){
   <thead>
     <tr>
       <th scope="col">Oefening</th>
-      <th scope="col">Resultaat</th>
+      <th scope="col">Sterren</th>
       <th scope="col">Maken</th>
+      <th scope="col">Resultaat</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td scope="row">1</td>
-      <td>	&#11088; &#11088;	&#11088;</td>
+      <td>	<?php
+
+      $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = "  .$_SESSION['id'];
+      $result = $conn->query($sql);
+
+       if (mysqli_num_rows($result) > 0){
+       while($row = $result->fetch_assoc()) {
+            
+       // 98 = 2
+       // 99= 3
+        
+          if($row['accuraatheid'] == 100){
+
+          echo 	" &#11088; &#11088; &#11088;	";
+
+         }else if($row['accuraatheid'] >= 98){
+          echo 	"	 &#11088; &#11088; ";
+        }else if($row['accuraatheid'] >= 95){
+
+          echo " &#11088;";
+        }
+
+
+
+
+      }
+    }
+       
+        ?>
+        
+  </td>
+  
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td>
+      <button type="button" class="btn btn-primary" onclick="">Resultaat</button>
+      
+      </td>
     </tr>
     <tr>
       <td scope="row">2</td>
-      <td>	&#11088; 	&#11088;</td>
+      <td>	</td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">3</td>
@@ -79,8 +139,9 @@ if($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user" ){
   <thead>
     <tr>
       <th scope="col">Oefening</th>
-      <th scope="col">Resultaat</th>
+      <th scope="col">Sterren</th>
       <th scope="col">Maken</th>
+      <th scope="col">Resultaat</th>
     </tr>
   </thead>
   <tbody>
@@ -88,36 +149,43 @@ if($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user" ){
       <td scope="row">1</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">2</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">3</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">4</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">5</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">6</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">7</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
@@ -137,39 +205,50 @@ if($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user" ){
       <td scope="row">1</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">2</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">3</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">4</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">5</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">6</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
     <tr>
       <td scope="row">7</td>
       <td></td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
 
 </body>
 </html>
+
+<?php 
+$conn->close();
+?>
