@@ -28,27 +28,28 @@ let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
 let timer = null;
-let score = 0;
+
+
 
 
 /* updaten course naar de volgende les?? */
 function updateQuote() {
-    quote_text.textContent = null;
-    current_quote = quotes_array;
+  quote_text.textContent = null;
+  current_quote = quotes_array;
 
-    // separate each character and make an element
-    // out of each of them to individually style them
-    current_quote.split('').forEach(char => {
-        const charSpan = document.createElement('span');
-        charSpan.innerText = char;
-        quote_text.appendChild(charSpan)
-    });
+  // separate each character and make an element 
+  // out of each of them to individually style them
+  current_quote.split('').forEach(char => {
+    const charSpan = document.createElement('span')
+    charSpan.innerText = char
+    quote_text.appendChild(charSpan)
+  })
 
-    // roll over to the first quote
-    if (quoteNo < quotes_array.length - 1)
-        quoteNo++;
-    else
-        quoteNo = 0;
+  // roll over to the first quote
+  if (quoteNo < quotes_array.length - 1)
+    quoteNo++;
+  else
+    quoteNo = 0;
 }
 
 /*
@@ -57,112 +58,147 @@ function updateQuote() {
 */
 function processCurrentText() {
 
-    // get current input text and split it
-    curr_input = input_area.value;
-    curr_input_array = curr_input.split('');
+  // get current input text and split it
+  curr_input = input_area.value;
+  curr_input_array = curr_input.split('');
 
-    // increment total characters typed
-    characterTyped++;
+  // increment total characters typed
+  characterTyped++;
 
-    errors = 0;
+  errors = 0;
 
-    quoteSpanArray = quote_text.querySelectorAll('span');
-    quoteSpanArray.forEach((char, index) => {
-        let typedChar = curr_input_array[index];
+  quoteSpanArray = quote_text.querySelectorAll('span');
+  quoteSpanArray.forEach((char, index) => {
+    let typedChar = curr_input_array[index]
 
-        // characters not currently typed
-        if (typedChar == null) {
-            char.classList.remove('correct_char');
-            char.classList.remove('incorrect_char');
+    // characters not currently typed
+    if (typedChar == null) {
+      char.classList.remove('correct_char');
+      char.classList.remove('incorrect_char');
 
-            // correct characters
-        } else if (typedChar === char.innerText) {
-            char.classList.add('correct_char');
-            char.classList.remove('incorrect_char');
+      // correct characters
+    } else if (typedChar === char.innerText) {
+      char.classList.add('correct_char');
+      char.classList.remove('incorrect_char');
 
-            // incorrect characters
-        } else {
-            char.classList.add('incorrect_char');
-            char.classList.remove('correct_char');
+      // incorrect characters
+    } else {
+      char.classList.add('incorrect_char');
+      char.classList.remove('correct_char');
 
-            // increment number of errors
-            errors++;
-        }
-    });
-
-    // display the number of errors
-    error_text.textContent = total_errors + errors;
-
-    // update accuracy text
-    let correctCharacters = (characterTyped - (total_errors + errors));
-    let accuracyVal = ((correctCharacters / characterTyped) * 100);
-    accuracy_text.textContent = Math.round(accuracyVal);
-
-    // if current text is completely typed
-    // irrespective of errors
-    if (curr_input.length == current_quote.length) {
-        finishGame();
-
-        // update total errors
-        total_errors += errors;
-
-        // clear the input area
-        input_area.value = "";
+      // increment number of errors
+      errors++;
     }
+  });
+
+  // display the number of errors
+  error_text.textContent = total_errors + errors;
+
+  // update accuracy text
+  let correctCharacters = (characterTyped - (total_errors + errors));
+  accuracy = ((correctCharacters / characterTyped) * 100);
+  accuracy_text.textContent = Math.round(accuracy);
+  
+  // if current text is completely typed
+  // irrespective of errors
+  if (curr_input.length == current_quote.length) {
+    finishGame();
+
+    // update total errors
+    total_errors += errors;
+
+    // clear the input area
+    input_area.value = "";
+  }
 }
 
 function updateTimer() {
-    if (timeLeft < 1000) {
-        // decrease the current time left
-        timeLeft++;
+  if (timeLeft < 1000) {
+    // decrease the current time left
+    timeLeft++;
 
-        // increase the time elapsed
-        timeElapsed++;
+    // increase the time elapsed
+    timeElapsed++;
 
-        // update the timer text
-        timer_text.textContent = timeLeft + "s";
-    }
+    // update the timer text
+    timer_text.textContent = timeLeft + "s";
+  }
 
 }
 
+function saveGame(vars, callback) {
+  $.ajax({
+      type: "POST",
+      url: "/TypenSneek/TypenSneek/TypenSneek/save.php",
+      data: vars,
+      dataType: "json",
+      success: function (data) {
+          callback(data);
+      },
+      error: function (data) {
+          console.log('[error] -> ' + data.responseText);
+      },
+      async: true
+  });
+}
+
+
 function finishGame() {
-    // stop the timer
-    clearInterval(timer);
+  
+  // stop the timer
+  clearInterval(timer);
 
-    // disable the input area
-    input_area.disabled = true;
+  // disable the input area
+  input_area.disabled = true;
 
-    // show finishing text
-    quote_text.textContent = "Klik op volgende voor de volgende oefening";
+  // show finishing text
+  quote_text.textContent = "Klik op volgende voor de volgende oefening";
 
-    // display restart button
-    restart_btn.style.display = "block";
+  // display restart button
+  restart_btn.style.display = "block";
 
-    // calculate cpm and wpm
-    cpm = Math.round(((characterTyped / timeElapsed) * 60));
-    wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
+  // calculate cpm and wpm
+  cpm = Math.round(((characterTyped / timeElapsed) * 60));
+  wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
 
-    // update cpm and wpm text
-    cpm_text.textContent = cpm;
-    wpm_text.textContent = wpm;
+  // update cpm and wpm text
+  cpm_text.textContent = cpm;
+  wpm_text.textContent = wpm;
 
-    // display the cpm and wpm
-    cpm_group.style.display = "block";
-    wpm_group.style.display = "block";
+  // display the cpm and wpm
+  cpm_group.style.display = "block";
+  wpm_group.style.display = "block";
 
-    // give score
-    score = wpm;
+  saveGame({
+    wpm: wpm,
+    cpm: cpm,
+    errors: errors,
+    accuracy: Math.round(accuracy),
+    time: timeElapsed,
+    lesson: document.getElementById("lesson").innerHTML,
+    exercise: document.getElementById("exercise").innerHTML
+
+}, function (data) {
+    if (data.valid === true) {
+        // Data opslaan gelukt
+    }
+    else {
+      alert('Data opslaan mislukt!');
+    }
+});
+
+
 }
 
 
 function startGame() {
 
-    resetValues();
-    updateQuote();
+  resetValues();
+  updateQuote();
 
-    // clear old and start a new timer
-    clearInterval(timer);
-    timer = setInterval(updateTimer, 1000);
+  // clear old and start a new timer
+  clearInterval(timer);
+  timer = setInterval(updateTimer, 1000);
 }
 
 function resetValues() {
