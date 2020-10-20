@@ -10,16 +10,10 @@ if ($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user") {
 
 <html>
 <head>
-<<<<<<< HEAD
 
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-=======
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
->>>>>>> df3f514472c91c8a10404f642b2067008218c137
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -132,16 +126,6 @@ if ($_SESSION['usertype'] === "admin" || $_SESSION['usertype'] === "user") {
         
       
       </td>
-=======
-    </thead>
-    <tbody>
-    <tr>
-        <td scope="row">1</td>
-        <td> &#11088; &#11088; &#11088;</td>
-        <td>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button>
-        </td>
->>>>>>> df3f514472c91c8a10404f642b2067008218c137
     </tr>
     <tr>
         <td scope="row">2</td>
