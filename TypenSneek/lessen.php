@@ -43,7 +43,9 @@ if (!$conn) {
 <?php 
     if(isset($_POST['submit'])){
         $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = "  .$_SESSION['id']);
-        echo "<div class='table-responsive' > 
+        echo "
+        <div class='col'>
+        <div class='table-responsive' > 
         
         <table class='table table-striped'>
         <tr >
@@ -54,6 +56,7 @@ if (!$conn) {
         <th scope='col'>Accuraatheid</th>
         <th scope='col'>Les</th>
         <th scope='col'>Oefening</th>
+        </div>
         <button type='button' class='close' aria-label='Close' onclick= window.location.href='lessen.php'><span aria-hidden='true'>&times;</span></button>
 
         </tr>";

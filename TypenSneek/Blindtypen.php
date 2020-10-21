@@ -20,28 +20,28 @@ session_start();
 
 <?php
 include "include/navbar.php";
-?>
+
+$databaseHost = 'localhost';
+$databaseName = 'typensneek';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+
+$result = mysqli_query($mysqli, "SELECT Title, Text FROM cms where id=2 ");
+
+while ($user_data = mysqli_fetch_array($result)) {
+    $title =  $user_data['Title'];
+    $text = $user_data['Text'];
 
 
-<div class="container" style="margin-top: 100px">
+
+echo '<div class="container" style="margin-top: 100px">
     <div class="row">
         <div class="col-sm">
-            <h4 class="mx-auto">Blind typen</h4>
+            <h4 class="mx-auto">';echo $title;'';echo '</h4>
             <hr>
-            <p>Tegenwoordig wordt een goede typevaardigheid steeds belangrijker. Al in het basisonderwijs hebben
-                kinderen veel profijt van computervaardigheden. Maar zeker ook op de middelbare school. Denk aan
-                werkstukken, het voorbereiden van spreekbeurten, of het schrijven van boekbesprekingen. Ook MSN-chatten
-                en e-mailen wordt een stuk gemakkelijker als je blind kunt typen. Een juiste toetsenbordvaardigheid
-                helpt daarnaast RSI te voorkomen. Uw kind kan nu bij Typen Sneek snel en foutloos blind leren typen met
-                tien vingers.
-
-                Snel leren typen is niet alleen handig en tijdbesparend. Een kind dat blind kan typen, en dus niet voor
-                elke letter op het toetsenbord hoeft te kijken, zal eerder klaar zijn met het huiswerk. Kinderen die op
-                de basisschool niet leren typen, beginnen op de middelbare school meteen al met een achterstand.
-                Neem het zekere voor het onzekere en laat uw kind een typecursus volgen. Hij of zij heeft de benodigde
-                toetsenbordvaardigheid snel onder de knie, dankzij onze methode. De cursus is ook geschikt voor kinderen
-                met dyslexie
-            </p>
+            <p> ';echo $text;'';echo '    </p>
 
             <br>
 
@@ -54,8 +54,9 @@ include "include/navbar.php";
 
         </div>
     </div>
-</div>
-
+</div>';
+}
+?>
 
 <?php
 require "include/footer.php";

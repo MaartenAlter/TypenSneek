@@ -97,6 +97,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
+<!--cms-->
+<?php
+$databaseHost = 'localhost';
+$databaseName = 'typensneek';
+$databaseUsername = 'root';
+$databasePassword = '';
+
+$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+
+$result = mysqli_query($mysqli, "SELECT Title, Text FROM cms where id=1 ");
+
+while ($user_data = mysqli_fetch_array($result)) {
+  $title =  $user_data['Title'];
+  $text = $user_data['Text'];
+}
+?>
+<!--/cms-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -119,15 +136,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     </script>
 </head>
-<body style="background: #17E9E0">
-
-
+<body>
+<!--<style>-->
+<!--    html body{-->
+<!--        background: rgb(34,159,195);-->
+<!--       background:  linear-gradient(0deg, rgba(34,159,195,1) 18%, rgba(13,23,198,1) 94%);-->
+<!--    }-->
+<!--</style>-->
 <?php
 
 include "include/navbar.php";
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     //header("location: login.php");
     //exit;
+    $location = "lessen.php";
     echo "<div class='container'>
   <div class='row'>
     <div class='col-sm'>
@@ -138,7 +160,8 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                 Leuk dat je er bent! De typcursus staat voor je klaar. Om te beginnen klik de knop hieronder. En voor vragen kun je altijd de online coach gebruiken.
             </p>
             <br>
-            <button type='button' class='btn btn-outline-primary' href='DeCursus.php'>Cursus</button>
+         
+            <button type='button' class='btn btn-outline-primary' onclick=window.location.href='lessen.php'>Cursus</button>
 
         </div>
     </div>
@@ -151,7 +174,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
               Als je vragen of een opmerking hebt, kun je die stellen via de HulpCoach. klik op de knop hier onder!<br><br>
             </p>
             <br>
-            <button type='button' class='btn btn-outline-primary' href='DeCursus.php'>HulpCoach</button>
+            <button type='button' class='btn btn-outline-primary'><a href='#'> De cursus</a></button>
 
         </div>
     </div>
@@ -192,78 +215,28 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 </div>";
 
 } else {
+    $databaseHost = 'localhost';
+    $databaseName = 'typensneek';
+    $databaseUsername = 'root';
+    $databasePassword = '';
 
+    $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+
+    $result = mysqli_query($mysqli, "SELECT Title, Text FROM cms where id=1 ");
+
+    while ($user_data = mysqli_fetch_array($result)) {
+        $title =  $user_data['Title'];
+        $text = $user_data['Text'];
+    }
     echo '<div class="container " style="margin-top: 101px">
     <div class="row">
-        <div class="col-sm rounded mr-5 p-3" style="background: #F5E6CC; color: #05386B;" >
-           <h4 class="mx-auto" >Over ons</h4>
+        <div class="col-sm rounded mr-5 p-3" style="background: #d88373; color: #000000; font-weight: normal" >
+          <h4 class="mx-auto" >';echo $title;'';echo '</h4>
 
-            <hr>
-            <p>
-                Cursus 10-vingerblind-computertypen voor kinderen en volwassenen.<br>
-                Wij geven al vele jaren les en zijn zeer ervaren.<br>
-
-                U kunt kiezen uit een klassikale cursus in groepsverband, maar ook uit een individuele cursus online met online coaching.<br><br>
-
-                Huiswerk wordt automatisch nagekeken.<br>
-
-                Door de kleine groepen is er veel persoonlijke aandacht, begeleiding en uitleg.
-                <br><br>
-                Wie eenmaal de cursus met succes heeft doorlopen, heeft hier de rest van zijn/haar leven profijt van.<br>
-
-                Ook voor kinderen met dyslexie bent u bij ons aan het juiste adres.<br>
-
-                Heeft u na het lezen van onze website nog vragen, neem dan gerust contact met ons op, wij zullen proberen al uw vragen te beantwoorden.
-            </p>
-            <br>
-
-
-
-
-
-            <p> U kunt de cursus ook online volgen.
-                Succes is verzekerd. Tot nu toe hebben alle cursisten de cursus met goed resultaat afgerond.
-
-                Deze cursus bestaat ook uit 9 lessen. Elke les heeft 8 dagen met opdrachten. Na de laatste opdracht volgt een toets. Aan het einde van de cursus volgt het examen.
-
-                De cursist logt in met een persoonlijk wachtwoord.
-
-                De cursist kan zelf het moment kiezen van de lestijd.
-
-                Ook voor de online cursus is het nodig om 20 á 30 minuten per dag te typen.
-
-                De toets wordt automatisch nagekeken.
-
-                Direct na elke oefening ontvangt u terugkoppeling van de resultaten.
-
-                Wij coachen de cursist online. De cursist kan online vragen stellen en deze worden ook online beantwoord. Ook is het mogelijk dat de online coach contact zoekt met de cursist.
-
-                Lettergrootte van de tekst is aan te passen, speciaal voor dyslexie. </p>
-            <br>
-            <p>
-                Wij werken met een beloningssysteem. Dit werkt erg motiverend.
-
-                Op elke plaats waar internet is, kan gewerkt worden.
-
-                De cursus wordt aangeboden voor
-                € 125,00. Dit is inclusief examen.
-
-                Het examen kan thuis gemaakt worden.
-                Er is ook een mogelijkheid om het examen in ons eigen cursuslokaal te maken. U kunt hiervoor contact met ons opnemen.
-
-                Oefening klaar, zoek de typespelletjes op!
-
-
-                Probeer eens de onderstaande proefles!
-
-                Het kan zijn dat het programma niet goed werkt met Internet Explorer.
-                Installeer dan Google Chrome of Firefox voor een goede werking!
-
-            </p>
+          <hr>
+            <p>';echo "$text";'';echo '<p>
             <br>
             <br>
-
-
             <div class="col-sm" >
                 <button type="button" formaction="Contact.php" class="btn btn-warning btn-lg rounded-pill " style="color: black">Neem contact op!</button>
                 <button type="button" formaction="Contact.php" class="btn btn-warning btn-lg rounded-pill" style="color: black">Doe een proefles</button>
@@ -300,7 +273,6 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                             </ul>
                         </ul>
                     </div>
-
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
                         <h3>Contact</h3>
                         <hr>
@@ -324,6 +296,5 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     </footer>';
 }
 ?>
-
 </body>
 </html>

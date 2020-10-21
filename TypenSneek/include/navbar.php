@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light  shadow fixed-top  mx-auto rounded "
-     style="max-width: 1150px; background: #F5E6CC">
+     style="max-width: 1150px; background: #c9e4ca">
     <div class="container mx-auto ">
         <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="60"
                                                       class="d-inline-block align-top" alt=""></a>
@@ -20,9 +20,6 @@
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
                     <a class="nav-link bg-danger rounded-pill" style="color: black" href="Dyslexie.php">Dyslexie</a>
-                </li>
-                <li class="nav-item mx-1 pt-2 text-center ">
-                    <a class="nav-link bg-success rounded-pill " style="color: black" href="lessen.php ">De cursus</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
                     <a class="nav-link bg-warning rounded-pill" style="color: black" href="aanmelden.php">Aanmelden</a>
