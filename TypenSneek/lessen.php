@@ -52,8 +52,10 @@ if (!$conn) {
 <?php 
     if(isset($_POST['submit'])){
         $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = "  .$_SESSION['id']);
-        echo "<div class='table-responsive' > 
-        
+       
+      
+        echo "<div class='container' s> 
+        <h2 style='margin-left: 5%; margin-top:2%;'>Voortgang</h2>
         <table class='table table-striped'>
         <tr >
         <th scope='col'>Aanslagen per minuut</th>
@@ -100,7 +102,17 @@ if (!$conn) {
       <th scope="col">Oefening</th>
       <th scope="col">Sterren</th>
       <th scope="col">Maken</th>
-      <th scope="col">Resultaat</th>
+    
+      <th scope="col">
+      
+      <form action="lessen.php" method="post">
+          <input type="submit" name="submit" id="1" class="btn btn-primary" value="Voortgang">
+          </form>
+      
+      </th>
+    
+
+            
     </tr>
   </thead>
 
@@ -140,21 +152,13 @@ if (!$conn) {
   </td>
   
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
-      <td>
-          <form action="lessen.php" method="post">
-          <input type="submit" name="submit" id="1" placeholder="Resultaat">
-          </form>
-            
-          
-        
-      
-      </td>
+
     </tr>
     <tr>
       <td scope="row">2</td>
       <td>	</td>
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
-      <td></td>
+    
     </tr>
     <tr>
       <td scope="row">3</td>
