@@ -75,7 +75,7 @@ if (!$conn) {
             echo "<tr>";
             echo "<td>" . $row['apm'] . "</td>";
             echo "<td>" . $row['wpm'] . "</td>";
-            echo "<td>" . $row['tijd'] . "</td>";
+            echo "<td>" . $row['tijd'] . "s</td>";
             echo "<td>" . $row['fouten'] . "</td>";
             echo "<td>" . $row['accuraatheid'] . "%</td>";
             echo "<td>" . $row['les'] . "</td>";
