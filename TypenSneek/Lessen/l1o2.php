@@ -17,7 +17,7 @@ if (!$conn) {
 <html lang="en">
 <head>
   <title>TypenSneek</title>
-  <link rel="stylesheet" href="stylecursus.css">
+  <link rel="stylesheet" href="../stylecursus.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <p hidden id="course">f f f f f ff ff ff ff ff fff fff fff fff fff f ff fff f ff fff
@@ -56,11 +56,20 @@ f ff fff ff f f f ff ff fff fff fff ff ff fff fff ff ff f f ff</p>
     <div class="quote">Klik hieronder om te beginnen.</div>
     <textarea class="input_area" placeholder="start met typen..." oninput="processCurrentText()"
       onfocus="startGame()" onkeydown="return (event.keyCode!=8);"></textarea>
-    <button  name="next" class="restart_btn"><a href="lessen.php"> Volgende </a></button>
+    <button  name="next" class="restart_btn"><a href="/TypenSneek/TypenSneek/TypenSneek/lessen.php"> Volgende </a></button>
  
      </form>
   </div>
-  <script src="script.js"></script>
+  <div class="container3">
+  <div class="container2">
+  <h1>Tips</h1>
+  <p>We leren nu de letter f Zet je vingers weer in de grondstelling. Je linkervingers dus weer op de a, s, d en f. Je rechtervingers op de j, k, l en ;. Je duimen op de spatiebalk. Je vingers raken deze toetsen steeds aan.
+
+We leren nu dus de f Dit doe je met de linker wijsvinger. Met je duimen doe je de spatiebalk. En aan het eind van de regel doe je weer met je rechterpink de Enter.</p>
+    <img src="/TypenSneek/TypenSneek/TypenSneek/img/tienvingers.png" >
+  </div>
+</div>
+  <script src="../script.js"></script>
 </body>
 </html>
 

@@ -31,10 +31,10 @@ if (isset($_POST['wpm'],$_POST['cpm'],$_POST['errors'],$_POST['accuracy'], $_POS
     $les = $_POST['lesson'];
     $oefening = $_POST['exercise'];
     $user = $_SESSION["id"];
-    
+    $gemaakt = 1;
 
-    $sql = "INSERT INTO progressie (apm, wpm, tijd, fouten, accuraatheid, userID, Les, Oefening)
-    VALUES ('$cpm', '$wpm', '$time', '$errors', '$accuracy', '$user', '$les', '$oefening')";
+    $sql = "INSERT INTO progressie (apm, wpm, tijd, fouten, accuraatheid, userID, Les, Oefening, Gemaakt)
+    VALUES ('$cpm', '$wpm', '$time', '$errors', '$accuracy', '$user', '$les', '$oefening', '$gemaakt')";
 
 
     if (mysqli_query($conn, $sql)) {

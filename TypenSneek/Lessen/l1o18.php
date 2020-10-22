@@ -17,19 +17,35 @@ if (!$conn) {
 <html lang="en">
 <head>
   <title>TypenSneek</title>
-  <link rel="stylesheet" href="stylecursus.css">
+  <link rel="stylesheet" href="../stylecursus.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
-<p hidden id="course">j j j j j jj jj jj jj jj jjj jjj jjj jjj jjj j jj jjj j jj jjj 
-j j j jj jj jj jjj jjj jjj jj jj jj j j j jj jjj j jj j jjj jj
-j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
+<p hidden id="course">laaf kaal faal kaas daal faal daas kaas laaf kaal faal fal jal
+jaja fafa kaka dada sasa lala alal asas adad afaf ajaj akak as
+
+ka kaas la laas ja jaas fa faas sa saas da daas kaak laal saas
+las al la asla sla asla al sla asla al sla asla al sla asla al
+
+lak ka fa la ka ja as sas las dal kak kal kas kad lak laf laj
+laal alla kaak akka ajja jaaj faaf affa assa saas daad adda da
+
+jaka fala kala faja daja saja jada lada kaja jasa fala salsa
+al; as; ad; af; aj; ak; aa; la; ka; ja; fa; da; sa; aa; daad;
+aad aas aal aak aaj aaf saad faad jaad kaad laad dada jaja la
+
+slaak sla slaak slak als as al asla slaak als slak sla as sla
+lalla kakka jajja faffa dadda sassa alla akka affa adda assa
+
+aa; ad; af; aj; ak; al; aa; as; ad; af; aj; al; ak; aa; laal;
+kaas slak las lak klad das jas ja aas als laf kaf daf ja asla
+</p>
 
 <p hidden id="lesson">1</p>
-<p hidden id="exercise">1</p>
+<p hidden id="exercise">18</p>
 <body>
 <form action="" method="post" id="scoreForm" >
   <div class="container">
-    <div class="heading">TypenSneek - Les 1 Oefening 1</div>
+    <div class="heading">TypenSneek - Les 1 Oefening 18</div>
     <div class="header">
       <div class="wpm">
         <div class="header_text">WPM</div>
@@ -56,21 +72,18 @@ j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
     <div class="quote">Klik hieronder om te beginnen.</div>
     <textarea class="input_area" placeholder="start met typen..." oninput="processCurrentText()"
       onfocus="startGame()" onkeydown="return (event.keyCode!=8);"></textarea>
-    <button  name="next" class="restart_btn"><a href="lessen.php"> Volgende </a></button>
+    <button  name="next" class="restart_btn"><a href="/TypenSneek/TypenSneek/TypenSneek/lessen.php"> Volgende </a></button>
  
      </form>
   </div>
   <div class="container3">
   <div class="container2">
-  <h1>Tips</h1>
-  <p>Als je gaat typen, zet je je vingers eerst in deze uitgangspositie.
-    Je linkervingers dus op de a, s, d en f. Je rechtervingers op de j, k, l en ;. Je duimen op de spatiebalk. 
-    Je vingers raken deze toetsen steeds aan.
-    We beginnen met het typen van de j. Dit doe je met de rechter wijsvinger. Met je duimen doe je de spatiebalk. Aan het eind van de regel doe je met je rechterpink de Enter.</p>
-    <img src="img/tienvingers.png" >
+  <h1>Aanwijzingen</h1>
+  <p>Dit is de laatste oefening van deze les. Doe goed je best en verbeter je record.</p>
+    <img src="/TypenSneek/TypenSneek/TypenSneek/img/tienvingers.png" >
   </div>
 </div>
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>
 

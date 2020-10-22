@@ -51,7 +51,7 @@ if (!$conn) {
 
 <?php 
     if(isset($_POST['submit'])){
-        $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = "  .$_SESSION['id']);
+        $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening FROM progressie WHERE userID  = "  .$_SESSION['id']);
        
       
         echo "<div class='container' s> 
@@ -157,33 +157,525 @@ if (!$conn) {
     <tr>
       <td scope="row">2</td>
       <td>	</td>
-      <td><button type="button" class="btn btn-primary" onclick="window.location.href='l1o2.php';">Maken</button></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o2.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
     
     </tr>
     <tr>
       <td scope="row">3</td>
       <td></td>
-      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 2 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o3.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
     </tr>
     <tr>
       <td scope="row">4</td>
       <td></td>
-      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 3 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o4.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
     </tr>
     <tr>
       <td scope="row">5</td>
       <td></td>
-      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 4 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o5.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
     </tr>
     <tr>
       <td scope="row">6</td>
       <td></td>
-      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 5 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o6.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
     </tr>
     <tr>
       <td scope="row">7</td>
       <td></td>
-      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 6 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o7.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">8</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 7 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o8.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">9</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 8 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o9.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">10</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 9 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o10.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">11</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 10 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o11.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">12</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 11 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o12.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">13</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 12 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o13.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">14</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 13 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o14.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">15</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 14 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o15.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">16</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 15 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o16.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">17</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 16 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o17.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">18</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 17 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o18.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
+    </tr>
+    <tr>
+      <td scope="row">19 - Toets</td>
+      <td></td>
+      <td>
+                <?php
+
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 18 AND userID  = "  .$_SESSION['id'];
+                    $result = $conn->query($sql);
+
+                    if (mysqli_num_rows($result) > 0){
+                    while($row = $result->fetch_assoc()) {
+                          
+                    // 98 = 2
+                    // 99= 3
+                      
+                        if($row['Gemaakt'] == 1){
+
+                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/toets1.php';>Maken</button>";
+
+                      }
+
+                    }
+                    }
+          
+            ?>
+        
+      
+      </td>
     </tr>
   </tbody>
 </table>
