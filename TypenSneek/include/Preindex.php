@@ -5,8 +5,7 @@
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group rounded-pill <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
             <label>Gebruikersnaam</label>
-            <input type="text" name="username" class="form-control rounded-pill border border-success"
-                   value="<?php echo $username; ?>">
+            <input type="text" name="username" class="form-control rounded-pill border border-success" value="<?php echo $username; ?>">
             <span class="help-block"><?php echo $username_err; ?></span>
         </div>
         <div class="form-group rounded-pill <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
@@ -23,7 +22,7 @@
             <br>
             <hr>
             <br>
-            <img src="../img/foto5.jpg" alt="ja" class="img-thumbnail rounded mx-auto d-block">
+            <img src="../img/foto5.jpg" alt="ja" class="img-thumbnail rounded mx-auto d-block" >
         </div>
 </div>
 </div>

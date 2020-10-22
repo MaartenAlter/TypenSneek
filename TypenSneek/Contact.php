@@ -1,6 +1,6 @@
-<?php
+<?php 
 session_start();
-?>
+?> 
 
 <!doctype html>
 <html lang="en">
@@ -44,40 +44,31 @@ include "include/navbar.php";
 <div class="container" id="space">
     <div class="row">
         <div class="col-md-4">
-            <b>Contact</b> <br/>
+            <b>Contact</b> <br />
             <p>Mocht u toch nog vragen hebben over onze cursus, aarzel dan niet.<br>
                 Vul het contactformulier in. Wij streven ernaar om u binnen twee werkdagen antwoord te geven.
             </p>
 
             <br>
             <!-- Google Map -->
-            <div style="width: 350px;position: relative;">
-                <iframe width="350" height="170"
-                        src="https://maps.google.com/maps?width=350&amp;height=120&amp;hl=en&amp;q=Pinksterbloem%2026+(Typen%20Sneek)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <div style="width: 350px;position: relative;"><iframe width="350" height="170" src="https://maps.google.com/maps?width=350&amp;height=120&amp;hl=en&amp;q=Pinksterbloem%2026+(Typen%20Sneek)&amp;ie=UTF8&amp;t=&amp;z=13&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 <div style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
                     <small style="line-height: 1.8;font-size: 2px;background: #fff;">
-                    </small></div>
-                <style>#gmap_canvas img {
-                        max-width: none !important;
-                        background: none !important
-                    }</style>
+                    </small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
             </div>
-            <br/>
+            <br />
         </div>
 
         <div class="col-md-8">
             <form class="captcha" method="post">
-                <input class="form-control" name="name" required placeholder="Naam..."/><br/>
-                <input class="form-control" name="phone" required placeholder="Telefoonnummer..."/><br/>
-                <input class="form-control" name="email" required placeholder="E-mail..."/><br/>
-                <textarea class="form-control" name="text" required placeholder="Hoe kunnen wij u helpen?"
-                          style="height:150px;"></textarea><br/>
+                <input class="form-control" name="name" required placeholder="Naam..." /><br />
+                <input class="form-control" name="phone" required placeholder="Telefoonnummer..." /><br />
+                <input class="form-control" name="email" required placeholder="E-mail..." /><br />
+                <textarea class="form-control" name="text" required placeholder="Hoe kunnen wij u helpen?" style="height:150px;"></textarea><br />
                 <button class="g-recaptcha" class="btn btn-primary"
                         data-sitekey="6Lcs1swZAAAAAC6EQaUBZMtU0wm58efdk5uR1vAT"
                         data-callback='onSubmit'
-                        data-action='submit'>Submit
-                </button>
+                        data-action='submit'>Submit</button>
             </form>
         </div>
     </div>
