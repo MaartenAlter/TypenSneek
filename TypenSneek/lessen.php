@@ -157,7 +157,7 @@ if (!$conn) {
     <tr>
       <td scope="row">2</td>
       <td>	</td>
-      <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
+      <td><button type="button" class="btn btn-primary" onclick="window.location.href='l1o2.php';">Maken</button></td>
     
     </tr>
     <tr>
