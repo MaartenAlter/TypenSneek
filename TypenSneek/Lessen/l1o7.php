@@ -17,19 +17,30 @@ if (!$conn) {
 <html lang="en">
 <head>
   <title>TypenSneek</title>
-  <link rel="stylesheet" href="stylecursus.css">
+  <link rel="stylesheet" href="../stylecursus.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
-<p hidden id="course">j j j j j jj jj jj jj jj jjj jjj jjj jjj jjj j jj jjj j jj jjj 
-j j j jj jj jj jjj jjj jjj jj jj jj j j j jj jjj j jj j jjj jj
-j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
+<p hidden id="course">dddddd ffffff jjjjjj kkkkkk d f j k dd ff jj kk dfjk dfjk dfjk
+ffffff dddddd kkkkkk jjjjjj k j f d ff jj kk dd jdkf fkdj jdkf
+
+df df fd fd jk jk kj kj df jk dj kf jf fj dk kd kf dj kd fj kd
+dd ff jj kk dd ff jj kk dd ff jj kk dd ff jj kk dd ff jj kk dd
+
+fd kj fd kj fd jk fd jk df jk kj fd dk fj dj fk dk jk fd jk fd
+dd ff jj kk dk kd fj jf df jk kj fd dk fj jd kf dj dk kf kd dj
+
+jjk ffd jkj fdf kjk dfd jfj jjf fjj kdk ddk kkd kjf fdk fkd jk
+kdj fjd kdf fjd kfd ddk ffj jfd kfj ddf kjj kjk fjf fjk kfd kd
+
+ddd fff jjj kkk d d d f f f j j j k k k dfjk dfjk dfjk dfjk dj
+fff ddd kkk jjj f f f d d d k k k j j j kjfd kjfd kjfd kjfd fk</p>
 
 <p hidden id="lesson">1</p>
-<p hidden id="exercise">1</p>
+<p hidden id="exercise">7</p>
 <body>
 <form action="" method="post" id="scoreForm" >
   <div class="container">
-    <div class="heading">TypenSneek - Les 1 Oefening 1</div>
+    <div class="heading">TypenSneek - Les 1 Oefening 7</div>
     <div class="header">
       <div class="wpm">
         <div class="header_text">WPM</div>
@@ -56,21 +67,22 @@ j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
     <div class="quote">Klik hieronder om te beginnen.</div>
     <textarea class="input_area" placeholder="start met typen..." oninput="processCurrentText()"
       onfocus="startGame()" onkeydown="return (event.keyCode!=8);"></textarea>
-    <button  name="next" class="restart_btn"><a href="lessen.php"> Volgende </a></button>
+    <button  name="next" class="restart_btn"><a href="/TypenSneek/TypenSneek/TypenSneek/lessen.php"> Volgende </a></button>
  
      </form>
   </div>
   <div class="container3">
   <div class="container2">
-  <h1>Tips</h1>
-  <p>Als je gaat typen, zet je je vingers eerst in deze uitgangspositie.
-    Je linkervingers dus op de a, s, d en f. Je rechtervingers op de j, k, l en ;. Je duimen op de spatiebalk. 
-    Je vingers raken deze toetsen steeds aan.
-    We beginnen met het typen van de j. Dit doe je met de rechter wijsvinger. Met je duimen doe je de spatiebalk. Aan het eind van de regel doe je met je rechterpink de Enter.</p>
-    <img src="img/tienvingers.png" >
+  <h1>Aanwijzingen</h1>
+  <p>We gaan nog een keer de geleerde letters door elkaar oefenen. <br><br>
+
+* Begin vanuit de grondstelling <br>
+* Denk goed na, zeg de letters eventueel hardop <br>
+* Type blind!</p>
+    <img src="/TypenSneek/TypenSneek/TypenSneek/img/tienvingers.png" >
   </div>
 </div>
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>
 

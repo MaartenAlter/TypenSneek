@@ -92,3 +92,20 @@ a{
   border: 0px;
   box-shadow: black 5px 8px 5px;
 }
+
+.container2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  padding: 10px;
+  background-color: white;
+  
+}
+
+.container3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+}
