@@ -121,7 +121,7 @@ if (!$conn) {
       <td scope="row">1</td>
       <td>	<?php
 
-      $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = "  .$_SESSION['id'];
+      $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = '$_SESSION[id]'  ";
       $result = $conn->query($sql);
 
        if (mysqli_num_rows($result) > 0){
@@ -150,7 +150,7 @@ if (!$conn) {
         ?>
         
   </td>
-  
+      
       <td><button type="button" class="btn btn-primary" onclick="window.location.href='DeCursus.php';">Maken</button></td>
 
     </tr>
@@ -159,24 +159,32 @@ if (!$conn) {
       <td>	</td>
       <td>
                 <?php
-
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = "  .$_SESSION['id'];
-                    $result = $conn->query($sql);
-
-                    if (mysqli_num_rows($result) > 0){
-                    while($row = $result->fetch_assoc()) {
+              
+                        
+                        $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+                        $result = $conn->query($sql);
+    
+                        if (mysqli_num_rows($result) > 0){
+                        while($row = $result->fetch_assoc()) {
+                              
+                        // 98 = 2
+                        // 99= 3
                           
-                    // 98 = 2
-                    // 99= 3
+                            if($row['Gemaakt'] == 1){
+    
+                            echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o2.php';>Maken</button>";
+    
+                          }else{
+                            echo "hoi";
+                          }
+    
+                        }
+                        }                  
                       
-                        if($row['Gemaakt'] == 1){
 
-                        echo 	"<button type='button' class='btn btn-primary' onclick=window.location.href='Lessen/l1o2.php';>Maken</button>";
-
-                      }
-
-                    }
-                    }
+                    
+                                     
+                    
           
             ?>
         
@@ -190,7 +198,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 2 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 2 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -219,7 +227,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 3 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 3 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -248,7 +256,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 4 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 4 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -277,7 +285,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 5 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 5 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -306,7 +314,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 6 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 6 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -335,7 +343,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 7 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 7 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -364,7 +372,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 8 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 8 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -393,7 +401,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 9 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 9 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -422,7 +430,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 10 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 10 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -451,7 +459,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 11 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 11 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -480,7 +488,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 12 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 12 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -509,7 +517,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 13 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 13 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -538,7 +546,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 14 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 14 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -567,7 +575,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 15 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 15 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -596,7 +604,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 16 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 16 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -625,7 +633,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 17 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 17 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){
@@ -654,7 +662,7 @@ if (!$conn) {
       <td>
                 <?php
 
-                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 18 AND userID  = "  .$_SESSION['id'];
+                    $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 18 AND userID  = '$_SESSION[id]' LIMIT 1 ";
                     $result = $conn->query($sql);
 
                     if (mysqli_num_rows($result) > 0){

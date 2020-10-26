@@ -126,8 +126,8 @@ while ($user_data = mysqli_fetch_array($result)) {
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--    external css -->
-    <link rel="stylesheet" href="css/footer.css"
-    <link rel="stylesheet" href="css/index.css"
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
