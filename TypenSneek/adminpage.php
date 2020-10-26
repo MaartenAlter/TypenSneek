@@ -188,6 +188,53 @@ include "include/navbar.php";
     }
     echo "</table>";
     echo " </form>";
+
+
+
+    $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, userID, accuraatheid, les, oefening FROM progressie");
+       
+      
+    echo "
+    <h2 style='margin-left: 5%; margin-top:2%;'>Voortgang</h2>
+    <table class='table table-striped'>
+    <tr >
+    <th scope='col'>Cursist</th>
+    <th scope='col'>Aanslagen per minuut</th>
+    <th scope='col'>Woorden per minuut</th>
+    <th scope='col'>Tijd</th>
+    <th scope='col'>Fouten</th>
+    <th scope='col'>Accuraatheid</th>
+    <th scope='col'>Les</th>
+    <th scope='col'>Oefening</th>
+   
+
+    </tr>";
+
+    while($row = mysqli_fetch_array($result))
+    {
+        echo "<form action='adminpage.php' method='POST'>";
+        echo "<tr>";
+        echo "<td>" . $row['userID'] . "</td>";
+        echo "<td>" . $row['apm'] . "</td>";
+        echo "<td>" . $row['wpm'] . "</td>";
+        echo "<td>" . $row['tijd'] . "s</td>";
+        echo "<td>" . $row['fouten'] . "</td>";
+        echo "<td>" . $row['accuraatheid'] . "%</td>";
+        echo "<td>" . $row['les'] . "</td>";
+        echo "<td>" . $row['oefening'] . "</td>";
+        echo "</tr>";
+
+
+      
+    }
+    
+    echo "</table>";
+    echo " </form>";
+
+  
+
+
+
 ?>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
