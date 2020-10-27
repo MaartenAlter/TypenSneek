@@ -16,6 +16,7 @@ if (!$conn) {
 ?>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
   <title>TypenSneek</title>
   <link rel="stylesheet" href="stylecursus.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -37,7 +38,7 @@ j jj jjj jj j j j jj jj jjj jjj jjj jj jj jjj jjj jj jj j j jj</p>
       </div>
       <div class="cpm">
         <div class="header_text">APM</div>
-        <div  class="curr_cpm" name="apm"> 100 </div>
+        <div class="curr_cpm" name="apm"> 100 </div>
       </div>
       <div class="errors">
         <div class="header_text">Fouten</div>

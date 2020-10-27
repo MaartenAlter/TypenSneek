@@ -114,6 +114,7 @@ while ($user_data = mysqli_fetch_array($result)) {
 }
 ?>
 <!--/cms-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -126,8 +127,8 @@ while ($user_data = mysqli_fetch_array($result)) {
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!--    external css -->
-    <link rel="stylesheet" href="css/footer.css"
-    <link rel="stylesheet" href="css/index.css"
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
@@ -135,6 +136,9 @@ while ($user_data = mysqli_fetch_array($result)) {
             document.getElementById("captcha").submit();
         }
     </script>
+<!--    css-->
+    <link rel="stylesheet" href="style.css">
+    <title>TypenSneek</title>
 </head>
 <body>
 <!--<style>-->
@@ -230,7 +234,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     }
     echo '<div class="container " style="margin-top: 101px">
     <div class="row">
-        <div class="col-sm rounded mr-5 p-3" style="background: #d88373; color: #000000; font-weight: normal" >
+        <div class="col-sm rounded mr-5 p-3" style="background: #fca62a; color: black; font-size: larger; " >
           <h4 class="mx-auto" >';echo $title;'';echo '</h4>
 
           <hr>
@@ -238,14 +242,14 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             <br>
             <br>
             <div class="col-sm" >
-                <button type="button" formaction="Contact.php" class="btn btn-warning btn-lg rounded-pill " style="color: black">Neem contact op!</button>
-                <button type="button" formaction="Contact.php" class="btn btn-warning btn-lg rounded-pill" style="color: black">Doe een proefles</button>
+                <button type="button" formaction="Contact.php" class="btn btn-lg rounded-pill " style="color: black; background-color: #23a5ed;"><a style="color: black" href="Contact.php">Neem contact op!</a></button>
+                <button type="button" formaction="Contact.php"  class="btn btn-lg rounded-pill" style="color: black; background-color: #23a5ed;"><a style="color: black" href="proefles.php">Doe een proefles</a></button>
             </div>
         </div>';
     require "include/Preindex.php";
-    echo '<footer style="margin-top: 70px; background: #F5E6CC; margin-bottom: 10%;" class="rounded p-3">
+    echo '<footer style="margin-top: 70px; background: #8ac246; margin-bottom: 10%;" class="rounded p-3" >
         <div class="footer">
-            <div class="container" style="color: #05386B;">
+            <div class="container" style="color: black;">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
                         <h3>Menu</h3>

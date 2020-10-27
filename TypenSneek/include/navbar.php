@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light  shadow fixed-top  mx-auto rounded "
-     style="max-width: 1150px; background: #c9e4ca">
+     style="max-width: 1150px; background: 	#8ac246">
     <div class="container mx-auto ">
         <a class="navbar-brand" href="index.php"><img src="img/Logo.png" width="auto" height="60"
                                                       class="d-inline-block align-top" alt=""></a>
@@ -11,21 +11,21 @@
             <ul class="navbar-nav ml-auto ">
 
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-warning rounded-pill" style="color: black"
+                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed"
                        href="Blindtypen.php">Blindtypen</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-success rounded-pill" style="color: black"
+                    <a class="nav-link  rounded-pill" style="color: black; background-color: #23a5ed"
                        href="Ervaringen.php">Ervaringen</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-danger rounded-pill" style="color: black" href="Dyslexie.php">Dyslexie</a>
+                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed" href="Dyslexie.php">Dyslexie</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link bg-warning rounded-pill" style="color: black" href="aanmelden.php">Aanmelden</a>
+                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed" href="aanmelden.php">Aanmelden</a>
                 </li>
                 <li class="nav-item  mx-1 pt-2 text-center">
-                    <a class="nav-link bg-danger rounded-pill" style="color: black" href="Contact.php">Contact</a>
+                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed" href="Contact.php">Contact</a>
                 </li>
 
                 <?php

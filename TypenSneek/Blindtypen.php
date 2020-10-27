@@ -15,6 +15,7 @@ session_start();
     <!--    external css -->
     <link rel="stylesheet" href="css/footer.css">
     <title>Hello, world!</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
