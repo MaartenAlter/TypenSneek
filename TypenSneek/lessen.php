@@ -121,7 +121,7 @@ if (!$conn) {
       <td scope="row">1</td>
       <td>	<?php
 
-      $sql = "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, Gemaakt FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = '$_SESSION[id]'  ";
+      $sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 1 AND userID  = '$_SESSION[id]' LIMIT 1 ";
       $result = $conn->query($sql);
 
        if (mysqli_num_rows($result) > 0){
@@ -156,7 +156,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">2</td>
-      <td>	</td>
+      <td> <?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 2 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?>	</td>
       <td>
                 <?php
               
@@ -194,7 +222,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">3</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 3 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -223,7 +279,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">4</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 4 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -252,7 +336,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">5</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 5 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -281,7 +393,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">6</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 6 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -310,7 +450,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">7</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 7 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -339,7 +507,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">8</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 8 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -368,7 +564,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">9</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 9 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -397,7 +621,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">10</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 10 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -426,7 +678,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">11</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 11 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -455,7 +735,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">12</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 12 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -484,7 +792,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">13</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 13 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -513,7 +849,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">14</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 14 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -542,7 +906,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">15</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 15 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -571,7 +963,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">16</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 16 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -600,7 +1020,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">17</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 17 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -629,7 +1077,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">18</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 18 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
@@ -658,7 +1134,35 @@ if (!$conn) {
     </tr>
     <tr>
       <td scope="row">19 - Toets</td>
-      <td></td>
+      <td><?php
+
+$sql = "SELECT accuraatheid FROM progressie WHERE les = 1 AND oefening = 19 AND userID  = '$_SESSION[id]' LIMIT 1 ";
+$result = $conn->query($sql);
+
+ if (mysqli_num_rows($result) > 0){
+ while($row = $result->fetch_assoc()) {
+      
+ // 98 = 2
+ // 99= 3
+  
+    if($row['accuraatheid'] == 100){
+
+    echo 	" &#11088; &#11088; &#11088;	";
+
+   }else if($row['accuraatheid'] >= 98){
+    echo 	"	 &#11088; &#11088; ";
+  }else if($row['accuraatheid'] >= 95){
+
+    echo " &#11088;";
+  }
+
+
+
+
+}
+}
+ 
+  ?></td>
       <td>
                 <?php
 
