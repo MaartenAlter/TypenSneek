@@ -1,4 +1,4 @@
-<div class="wrapper rounded p-3" style="background: #F5E6CC; color: #05386B;">
+<div class="wrapper rounded p-3" style="background: #8372cd; color: black;">
     <h4>Login</h4>
     <hr>
 
@@ -14,7 +14,7 @@
             <span class="help-block"><?php echo $password_err; ?></span>
         </div>
         <div class="form-group rounded-pill">
-            <input type="submit" class="btn btn-warning rounded-pill mx-auto" value="Login" style="color: black">
+            <input type="submit" class="btn rounded-pill mx-auto" value="Login" style="color: black; background-color: #fca62a">
             <!--                <button id="custom-button" type="submit" value="Login" class="g-recaptcha" data-sitekey="6Lcs1swZAAAAAC6EQaUBZMtU0wm58efdk5uR1vAT" data-callback='onSubmit' data-action='submit'>Login</button>-->
         </div>
 
@@ -22,7 +22,7 @@
             <br>
             <hr>
             <br>
-            <img src="../img/foto5.jpg" alt="ja" class="img-thumbnail rounded mx-auto d-block" >
+            <img src="img/foto5.jpg" alt="ja" class="img-thumbnail rounded mx-auto d-block" >
         </div>
 </div>
 </div>
