@@ -142,11 +142,12 @@ include "include/navbar.php";
 
 </div>
 
-<h2>Geregistreerde gebruikers </h2>
+
     <hr>
     <?php
     $result = mysqli_query($conn,"SELECT * FROM gebruikers WHERE Aangemeld = 1 ");
-    echo "<table class='table table-striped'>
+    echo "<table class='table table-striped' >
+    <h2>Geregistreerde gebruikers </h2>
 <tr >
 <th scope='col'>Voornaam</th>
 <th scope='col'>Achternaam</th>
@@ -188,17 +189,22 @@ include "include/navbar.php";
     }
     echo "</table>";
     echo " </form>";
+ 
+    // $result = mysqli_query($conn, "SELECT Voornaam, Achternaam, ID  FROM gebruikers");
+    // while($row = mysqli_fetch_array($result)){
+    //     $voornaam = $row['Voornaam'];
+    //     $achternaam = $row['Achternaam'];
+    //     $naamid = $row['ID'];
+    // }
 
-
-
-    $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, userID, accuraatheid, les, oefening FROM progressie");
+    $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, userID, accuraatheid, les, oefening, username FROM progressie");
        
       
     echo "
-    <h2 style='margin-left: 5%; margin-top:2%;'>Voortgang</h2>
+    <h2 '>Voortgang</h2>
     <table class='table table-striped'>
     <tr >
-    <th scope='col'>Cursist</th>
+    <th scope='col'>Gebruikersnaam</th>
     <th scope='col'>Aanslagen per minuut</th>
     <th scope='col'>Woorden per minuut</th>
     <th scope='col'>Tijd</th>
@@ -214,7 +220,7 @@ include "include/navbar.php";
     {
         echo "<form action='adminpage.php' method='POST'>";
         echo "<tr>";
-        echo "<td>" . $row['userID'] . "</td>";
+        echo "<td>" . $row['username'] . "</td>";
         echo "<td>" . $row['apm'] . "</td>";
         echo "<td>" . $row['wpm'] . "</td>";
         echo "<td>" . $row['tijd'] . "s</td>";

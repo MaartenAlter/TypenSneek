@@ -51,43 +51,43 @@ if (!$conn) {
     
     <div class="form-group">
         <label for="exampleInputEmail1">Voornaam: </label>
-        <input type="text" name="firstname" id="firstname" placeholder="Voornaam... " class="form-control">
+        <input type="text" name="firstname" id="firstname" placeholder="Voornaam... " class="form-control" required>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Achternaam: </label>
-        <input type="text" name="lastname" id="lastname" placeholder="Achternaam..." class="form-control"> 
+        <input type="text" name="lastname" id="lastname" placeholder="Achternaam..." class="form-control" required> 
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Email: </label>
-        <input type="text" name="email" id="email" placeholder="Email..." class="form-control">
+        <input type="text" name="email" id="email" placeholder="Email..." class="form-control" required>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Telefoonnummer: </label>
-        <input type="text" name="phonenumber" id="phonenumber" placeholder="Telefoonnummer..." class="form-control"> 
+        <input type="text" name="phonenumber" id="phonenumber" placeholder="Telefoonnummer..." class="form-control" required> 
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Geboortedatum: </label>
-        <input type="date" name="dateofbirth" id="dateofbirth" placeholder="Geboortedatum..." class="form-control">
+        <input type="date" name="dateofbirth" id="dateofbirth" placeholder="Geboortedatum..." class="form-control" required>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Straat en huisnummer: </label>
-        <input type="text" name="street" id="street" placeholder="Straat en huisnummer..." class="form-control">
+        <input type="text" name="street" id="street" placeholder="Straat en huisnummer..." class="form-control" required>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Postcode: </label>
-        <input type="text" name="zipcode" id="zipcode" placeholder="Postcode..." class="form-control">
+        <input type="text" name="zipcode" id="zipcode" placeholder="Postcode..." class="form-control" required>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Woonplaats: </label>
-        <input type="text" name="place" id="place" placeholder="Woonplaats..." class="form-control">
+        <input type="text" name="place" id="place" placeholder="Woonplaats..." class="form-control" required>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">School: </label>
-        <input type="text" name="school" id="school" placeholder="School..." class="form-control">
+        <input type="text" name="school" id="school" placeholder="School..." class="form-control" required>
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Opmerking: </label>
-        <input type="text" name="command" id="command" placeholder="Opmerking..." class="form-control">
+        <input type="text" name="command" id="command" placeholder="Opmerking..." class="form-control" required>
     </div>
         <div>
             <input type="checkbox" name="AVG" required >

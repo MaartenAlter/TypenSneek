@@ -51,29 +51,38 @@ while ($user_data = mysqli_fetch_array($result)) {
     <title>Hello, world!</title>
 </head>
 <body>
-<a href="read.php">Home</a>
+<a href="read.php">Terug</a>
 <br/><br/>
 
-<form name="update_user" method="post" action="edit.php">
-    <table border="0">
-        <tr>
-            <td>Naam</td>
-            <td><input type="text" name="name" readonly value=<?php echo $name; ?>></td>
-        </tr>
-        <tr>
-            <td>Titel</td>
-            <td><input type="text" name="title" value=<?php echo $title; ?>></td>
-        </tr>
-        <tr>
-            <td>Tekst</td>
-            <td><textarea style="width: 500%; height: 500%" type="text" name="text"><?php echo $text; ?></textarea></td>
-        </tr>
-        <tr>
-            <td><input type="hidden" name="id" value=<?php echo $_GET['id']; ?>></td>
-            <td><input type="submit" name="update" value="Update"></td>
-        </tr>
-    </table>
+<form name="update_user" method="post" action="edit.php" style="width: 40%; float: left; margin: 2% ;">
+    
+            <div class="form-group">
+                <label for="exampleInputEmail1">Naam Pagina</label>
+                <input type="text" class="form-control" name="name" readonly value=<?php echo $name; ?>>
+                
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Titel</label>
+                <input type="text" class="form-control" name="title" value=<?php echo $title; ?>>
+                
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tekst</label>
+                <textarea style="width: 100%; height: 500%" type="text"  name="text"><?php echo $text; ?></textarea>
+                
+            </div>
+            
+        
+        
+           
+            
+        
+        
+            <input type="hidden" name="id" value=<?php echo $_GET['id']; ?>>
+            <input type="submit" name="update" value="Wijzigen" class="btn btn-primary">
+        
 </form>
+
 
 
 <!-- Optional JavaScript -->
