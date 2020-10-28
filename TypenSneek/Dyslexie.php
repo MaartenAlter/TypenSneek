@@ -33,9 +33,9 @@ while ($user_data = mysqli_fetch_array($result)) {
 $title =  $user_data['Title'];
 $text = $user_data['Text'];
 
-echo '<div class="container" style="margin-top: 100px">
+echo '<div class="container rounded" >
     <div class="row">
-        <div class="col-sm">
+        <div class="col-sm" style="margin-top: 100px; background: #fca62a; color: black; font-size: larger; padding: 10px; ">
             <h4 class="mx-auto">';echo $title;'';echo '</h4>
             <hr>
             <p>   ';echo $text;'';echo '</p>
@@ -44,11 +44,9 @@ echo '<div class="container" style="margin-top: 100px">
         </div>
 ';}
 ?>
-        <div class="col-sm">
+        <div class="col-sm" style="margin-top: 100px; background: #fca62a; color: black; font-size: larger; padding: 10px; ">
             <h4>Voordelen</h4>
             <hr>
-
-
         </div>
     </div>
 </div>

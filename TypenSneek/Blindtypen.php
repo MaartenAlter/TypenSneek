@@ -37,7 +37,7 @@ while ($user_data = mysqli_fetch_array($result)) {
 
 
 
-echo '<div class="container" style="margin-top: 100px">
+echo '<div class="container rounded" style="background: #fca62a; padding: 10px; margin-top: 100px; color: black;">
     <div class="row">
         <div class="col-sm">
             <h4 class="mx-auto">';echo $title;'';echo '</h4>
@@ -57,6 +57,7 @@ echo '<div class="container" style="margin-top: 100px">
     </div>
 </div>';
 }
+
 ?>
 
 <?php

@@ -9,6 +9,10 @@
         </button>
         <div class="collapse navbar-collapse mxt-4 pt-1" id="navbarResponsive">
             <ul class="navbar-nav ml-auto ">
+                <li class="nav-item mx-1 pt-2 text-center">
+                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed"
+                       href="index.php">Home</a>
+                </li>
 
                 <li class="nav-item mx-1 pt-2 text-center">
                     <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed"
