@@ -36,16 +36,13 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-
-
-
-
 ?>
 <html>
 
-<body style="background: #17E9E0 ">
-<br><br><br><br><br>
-<div class="container">
+<body>
+
+<div class="container" style="margin-top: 100px">
+    
     <h3>Aanmelden: </h3>
     <form action="aanmelden.php" method="post">
     
@@ -103,11 +100,12 @@ if (!$conn) {
    
     </form>
 
+
+
+<div>
     <?php
     require "include/footer.php";
     ?>
-
-<div>
 </body>
 </html>
 
