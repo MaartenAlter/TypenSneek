@@ -121,7 +121,7 @@ while ($user_data = mysqli_fetch_array($result)) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -141,12 +141,7 @@ while ($user_data = mysqli_fetch_array($result)) {
     <title>TypenSneek</title>
 </head>
 <body>
-<!--<style>-->
-<!--    html body{-->
-<!--        background: rgb(34,159,195);-->
-<!--       background:  linear-gradient(0deg, rgba(34,159,195,1) 18%, rgba(13,23,198,1) 94%);-->
-<!--    }-->
-<!--</style>-->
+
 <?php
 
 include "include/navbar.php";
@@ -171,7 +166,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     </div>
     <div class='col-sm'>
           <div class='col-sm'>
-              <div class='col-sm rounded p-3 ' style='margin-top:101px; background: #F5E6CC; max-width: 1100px' >
+              <div class='col-sm rounded p-3 ' style='margin-top:101px; background: #ffffe6; max-width: 1100px' >
            <h4 class='mx-auto'>Vragen?</h4>
             <hr>
             <p>
@@ -184,10 +179,10 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     </div>
 </div>";
 //2e rij
-    echo "<div class='container'>
+if ($_SESSION["usertype"] == "admin") { echo "<div class='container'>
   <div class='row'>
     <div class='col-sm'>
-              <div class='col-sm rounded p-3 ' style='margin-top:50px; background: #F5E6CC; max-width: 1100px' >
+              <div class='col-sm rounded p-3 ' style='margin-top:50px; background: #ffffe6; max-width: 1100px' >
            <h4 class='mx-auto'>Aanmeldingen beheer</h4>
             <hr>
             <p>
@@ -197,9 +192,9 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             </p>
             
              ";
-    if ($_SESSION["usertype"] == "admin") {
+    
         echo "<button type='button' class='btn-outline-danger btn border-2'><a class='nav-link' style='color: black' href='adminpage.php'>Beheer</a></button>";
-    };
+    
     echo "
                 
 
@@ -207,7 +202,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     </div>
     <div class='col-sm'>
           <div class='col-sm'>
-              <div class='col-sm rounded p-3 ' style='margin-top:50px; background: #F5E6CC; max-width: 1100px' >
+              <div class='col-sm rounded p-3 ' style='margin-top:50px; background: #ffffe6; max-width: 1100px' >
            <h4 class='mx-auto'>CMS (pagina veranderen)</h4>
             <hr>
                 <p>Verander de inhoud van pagina's</p>
@@ -217,7 +212,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         </div>
     </div>
 </div>";
-
+};
 } else {
     $databaseHost = 'localhost';
     $databaseName = 'typensneek';
@@ -247,7 +242,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
             </div>
         </div>';
     require "include/Preindex.php";
-    echo '<footer style="margin-top: 70px; background: #8ac246; margin-bottom: 10%;" class="rounded p-3" >
+    echo '<footer style="margin-top: 70px; background: 	#8ac246; margin-bottom: 10%;" class="rounded p-3" >
         <div class="footer">
             <div class="container" style="color: black;">
                 <div class="row">

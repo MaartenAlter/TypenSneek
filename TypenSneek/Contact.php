@@ -69,7 +69,7 @@ include "include/navbar.php";
                 <button class="g-recaptcha" class="btn btn-primary"
                         data-sitekey="6Lcs1swZAAAAAC6EQaUBZMtU0wm58efdk5uR1vAT"
                         data-callback='onSubmit'
-                        data-action='submit'>Submit</button>
+                        data-action='submit'>Verzenden</button>
             </form>
         </div>
     </div>
