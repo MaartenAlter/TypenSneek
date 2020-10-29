@@ -88,7 +88,7 @@ if (!$conn) {
     </div>
         <div>
             <input type="checkbox" name="AVG" required >
-            <label for="exampleInputEmail1">Ik ga akkoord  met de AVG wet. </label>
+            <label for="exampleInputEmail1">Ik ga akkoord  met de <a href="https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/avg-europese-privacywetgeving">AVG</a> wet. </label>
         </div>
     <br>
     <input type="submit" value="Aanmaken" name="submit" class="btn btn-primary">

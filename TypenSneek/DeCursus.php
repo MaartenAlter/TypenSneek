@@ -16,7 +16,7 @@ if (!$conn) {
 ?>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    
   <title>TypenSneek</title>
   <link rel="stylesheet" href="stylecursus.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

@@ -10,26 +10,26 @@
         <div class="collapse navbar-collapse mxt-4 pt-1" id="navbarResponsive">
             <ul class="navbar-nav ml-auto ">
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed"
+                    <a class="nav-link rounded-pill" style="color: white; background-color: #23a5ed"
                        href="index.php">Home</a>
                 </li>
 
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed"
+                    <a class="nav-link rounded-pill" style="color: white; background-color: #23a5ed"
                        href="Blindtypen.php">Blindtypen</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link  rounded-pill" style="color: black; background-color: #23a5ed"
+                    <a class="nav-link  rounded-pill" style="color: white; background-color: #23a5ed"
                        href="Ervaringen.php">Ervaringen</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed" href="Dyslexie.php">Dyslexie</a>
+                    <a class="nav-link rounded-pill" style="color: white; background-color: #23a5ed" href="Dyslexie.php">Dyslexie</a>
                 </li>
                 <li class="nav-item mx-1 pt-2 text-center">
-                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed" href="aanmelden.php">Aanmelden</a>
+                    <a class="nav-link rounded-pill" style="color: white; background-color: #23a5ed" href="aanmelden.php">Aanmelden</a>
                 </li>
                 <li class="nav-item  mx-1 pt-2 text-center">
-                    <a class="nav-link rounded-pill" style="color: black; background-color: #23a5ed" href="Contact.php">Contact</a>
+                    <a class="nav-link rounded-pill" style="color: white; background-color: #23a5ed" href="Contact.php">Contact</a>
                 </li>
 
                 <?php

@@ -20,7 +20,7 @@ session_start();
 if($_SESSION['usertype'] === "admin"){
 
 }else{
-    header("Location: index.php");
+    header("Location: index.php"); 
 }
 
 ?>
@@ -160,7 +160,6 @@ include "include/navbar.php";
 <th scope='col'>School</th>
 <th scope='col'>Opmerking</th>
 <th scope='col'>Gemaakt op</th>
-<th scope='col'>Registreeren</th>
 <th scope='col'>Verwijderen</th>
 </tr>";
 
@@ -181,7 +180,7 @@ include "include/navbar.php";
         echo "<td>" . $row['GemaaktOp'] . "</td>";
 //echo "<td>" . "<input type='text' name='username'  id=" .$row['ID']."   >" . "</td>";
 //echo "<td>" . "<input type='password' name='password' id=" .$row['ID']." >". "</td>";
-        echo "<td>" . "<a href='adminpage.php?action=accept&id=".$row['ID']. "'>registreer</a>" . "</td>";
+    
         echo "<td>" . "<a href='adminpage.php?action=delete&id=".$row['ID']."'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>verwijder</a>" . "</td>";
         echo "</tr>";
 

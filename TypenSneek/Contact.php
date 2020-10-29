@@ -42,13 +42,21 @@ include "include/navbar.php";
 
 
 <!--/recaptcha-->
+
+
+
 <div class="container" id="space">
     <div class="row">
         <div class="col-md-4">
-            <b>Contact</b> <br />
-            <p>Mocht u toch nog vragen hebben over onze cursus, aarzel dan niet.<br>
+        <div class="card" style="width: 350px;background: #23a5ed; color: black; font-size: larger; ">
+        <div class="card-body"  >
+                <b>Contact</b> <br />
+                     <p>Mocht u toch nog vragen hebben over onze cursus, aarzel dan niet.<br>
                 Vul het contactformulier in. Wij streven ernaar om u binnen twee werkdagen antwoord te geven.
-            </p>
+                     </p>
+
+                </div>
+        </div>
 
             <br>
             <!-- Google Map -->
@@ -69,7 +77,7 @@ include "include/navbar.php";
                 <button class="g-recaptcha" class="btn btn-primary"
                         data-sitekey="6Lcs1swZAAAAAC6EQaUBZMtU0wm58efdk5uR1vAT"
                         data-callback='onSubmit'
-                        data-action='submit'>Verzenden</button>
+                        data-action='submit'  style="color: white; background-color: #23a5ed">Verzenden</button>
             </form>
         </div>
     </div>

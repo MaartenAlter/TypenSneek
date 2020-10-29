@@ -15,7 +15,7 @@ session_start();
 
     <!--    external css -->
     <link rel="stylesheet" href="css/footer.css">
-    <title>Hello, world!</title>
+    <title>TypenSneek</title>
 </head>
 <body>
 <?php
