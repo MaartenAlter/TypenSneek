@@ -50,11 +50,11 @@ include "include/navbar.php";
 <br>
 <div>
 
-    <h2> Aanmeldingen </h2>
+    
     <hr>
     <?php
     $result = mysqli_query($conn,"SELECT * FROM gebruikers WHERE Aangemeld = 0 ");
-    echo "<table class='table table-striped'>
+    echo "<h2> Aanmeldingen </h2> <table class='table table-striped' '>
 <tr >
 <th scope='col'>Voornaam</th>
 <th scope='col'>Achternaam</th>
@@ -88,15 +88,15 @@ include "include/navbar.php";
         echo "<td>" . $row['GemaaktOp'] . "</td>";
 //echo "<td>" . "<input type='text' name='username'  id=" .$row['ID']."   >" . "</td>";
 //echo "<td>" . "<input type='password' name='password' id=" .$row['ID']." >". "</td>";
-        echo "<td>" . "<a href='adminpage.php?action=accept&id=".$row['ID']. "'>registreer</a>" . "</td>";
-        echo "<td>" . "<a href='adminpage.php?action=delete&id=".$row['ID']."'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>verwijder</a>" . "</td>";
+        echo "<td>" . "<a href='adminpage.php?action=accept&id=".$row['ID']. "'>Registreer</a>" . "</td>";
+        echo "<td>" . "<a href='adminpage.php?action=delete&id=".$row['ID']."'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>Verwijder</a>" . "</td>";
         echo "</tr>";
 
 
     }
     echo "</table>";
     echo " </form>";
-
+    
 
     if (isset($_GET['action']) && $_GET['action'] === 'accept') {
         $sql = "SELECT * FROM gebruikers WHERE id=" .(int)$_GET['id'];
@@ -111,7 +111,9 @@ include "include/navbar.php";
               Email: ". $row['Email']. "<br>
             Gebruikersnaam: <input type='text'  required name='username' '><br>
             Wachtwoord:  <input type='password'  required name='password'  '><br>
-            <input type='submit' name='Submit' value='Registreer' onClick='return confirm(/Weet u zeker dat u deze gebruiker wilt toevoegen?/) '><br>
+            <input type='submit' name='Submit' class='btn btn-primary' value='Registreer' onClick='return confirm(/Weet u zeker dat u deze gebruiker wilt toevoegen?/) '><br>
+            <br>
+            <button type='button' class='btn btn-danger' aria-label='Close' onclick= window.location.href='adminpage.php'>Sluiten</button>
             <br></form> <br>";
             }
             if (isset($_POST['Submit'])) {
@@ -142,11 +144,11 @@ include "include/navbar.php";
 
 </div>
 
-
     <hr>
     <?php
     $result = mysqli_query($conn,"SELECT * FROM gebruikers WHERE Aangemeld = 1 ");
-    echo "<table class='table table-striped' >
+    
+    echo " <table class='table table-striped' >
     <h2>Geregistreerde gebruikers </h2>
 <tr >
 <th scope='col'>Voornaam</th>
@@ -160,6 +162,8 @@ include "include/navbar.php";
 <th scope='col'>School</th>
 <th scope='col'>Opmerking</th>
 <th scope='col'>Gemaakt op</th>
+<th scope='col'>Gebruikersnaam</th>
+<th scope='col'>Resultaat</th>
 <th scope='col'>Verwijderen</th>
 </tr>";
 
@@ -178,17 +182,68 @@ include "include/navbar.php";
         echo "<td>" . $row['School'] . "</td>";
         echo "<td>" . $row['Opmerking'] . "</td>";
         echo "<td>" . $row['GemaaktOp'] . "</td>";
+        echo "<td>" . $row['Gebruikersnaam'] . "</td>";
 //echo "<td>" . "<input type='text' name='username'  id=" .$row['ID']."   >" . "</td>";
 //echo "<td>" . "<input type='password' name='password' id=" .$row['ID']." >". "</td>";
-    
-        echo "<td>" . "<a href='adminpage.php?action=delete&id=".$row['ID']."'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>verwijder</a>" . "</td>";
+        echo "<td> <form action='adminpage.php' method='post'>
+        <input type='hidden' name='username' value=".$row['Gebruikersnaam'].">
+        <input type='submit' name='results' value='Resultaten'  class='btn btn-primary'>
+        </form> </td>";
+        echo "<td>" . "<a href='adminpage.php?action=delete&id=".$row['ID']."'onClick='return confirm(/Wilt u deze gebruiker wissen?/)'>Verwijder</a>" . "</td>";
         echo "</tr>";
 
-
+        
     }
     echo "</table>";
     echo " </form>";
+  
+
+    if(isset($_POST['results'])){
+        $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, accuraatheid, les, oefening, username FROM progressie WHERE username  = '$_POST[username]'");
+       
+      
+        echo "<div class='container' > 
+        <h2 style='margin-left: 5%; margin-top:2%;'>Voortgang</h2>
+        <table class='table table-striped'>
+        <tr >
+        <th scope='col'>Cursist</th>
+        <th scope='col'>Aanslagen per minuut</th>
+        <th scope='col'>Woorden per minuut</th>
+        <th scope='col'>Tijd</th>
+        <th scope='col'>Fouten</th>
+        <th scope='col'>Accuraatheid</th>
+        <th scope='col'>Les</th>
+        <th scope='col'>Oefening</th>
+        <button type='button' class='close' aria-label='Close' onclick= window.location.href='adminpage.php'><span aria-hidden='true'>&times;</span></button>
+
+        </tr>";
+
+        while($row = mysqli_fetch_array($result))
+        {
+            echo "<form action='adminpage.php' method='POST'>";
+            echo "<tr>";
+            echo "<td>" . $row['username'] . "</td>";
+            echo "<td>" . $row['apm'] . "</td>";
+            echo "<td>" . $row['wpm'] . "</td>";
+            echo "<td>" . $row['tijd'] . "s</td>";
+            echo "<td>" . $row['fouten'] . "</td>";
+            echo "<td>" . $row['accuraatheid'] . "%</td>";
+            echo "<td>" . $row['les'] . "</td>";
+            echo "<td>" . $row['oefening'] . "</td>";
+            echo "</tr>";
+
+
+          
+        }
+        
+        echo "</table>";
+        echo " </form>";
+        echo " </div>";
+      }
+
  
+
+
     // $result = mysqli_query($conn, "SELECT Voornaam, Achternaam, ID  FROM gebruikers");
     // while($row = mysqli_fetch_array($result)){
     //     $voornaam = $row['Voornaam'];
@@ -196,45 +251,7 @@ include "include/navbar.php";
     //     $naamid = $row['ID'];
     // }
 
-    $result = mysqli_query($conn, "SELECT ProgressieID, apm, wpm, tijd, fouten, userID, accuraatheid, les, oefening, username FROM progressie");
-       
-      
-    echo "
-    <h2 '>Voortgang</h2>
-    <table class='table table-striped'>
-    <tr >
-    <th scope='col'>Gebruikersnaam</th>
-    <th scope='col'>Aanslagen per minuut</th>
-    <th scope='col'>Woorden per minuut</th>
-    <th scope='col'>Tijd</th>
-    <th scope='col'>Fouten</th>
-    <th scope='col'>Accuraatheid</th>
-    <th scope='col'>Les</th>
-    <th scope='col'>Oefening</th>
-   
-
-    </tr>";
-
-    while($row = mysqli_fetch_array($result))
-    {
-        echo "<form action='adminpage.php' method='POST'>";
-        echo "<tr>";
-        echo "<td>" . $row['username'] . "</td>";
-        echo "<td>" . $row['apm'] . "</td>";
-        echo "<td>" . $row['wpm'] . "</td>";
-        echo "<td>" . $row['tijd'] . "s</td>";
-        echo "<td>" . $row['fouten'] . "</td>";
-        echo "<td>" . $row['accuraatheid'] . "%</td>";
-        echo "<td>" . $row['les'] . "</td>";
-        echo "<td>" . $row['oefening'] . "</td>";
-        echo "</tr>";
-
-
-      
-    }
     
-    echo "</table>";
-    echo " </form>";
 
   
 
