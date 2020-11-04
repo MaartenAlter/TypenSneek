@@ -259,22 +259,22 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
         $title =  $user_data['Title'];
         $text = $user_data['Text'];
     }
-    echo '<div class="container " style="margin-top: 101px">
+    ?><div class="container " style="margin-top: 101px">
     <div class="row">
         <div class="col-sm rounded mr-5 p-3" style="background: #fca62a; color: black; font-size: larger; " >
-          <h4 class="mx-auto" >';echo $title;'';echo '</h4>
+          <h4 class="mx-auto" ><?php echo $title. ' ';?></h4>
 
           <hr>
-            <p>';echo "$text";'';echo '<p>
+            <p> <?php echo $text . ' ';?><p>
             <br>
             <br>
             <div class="col-sm" >
                 <button type="button" formaction="Contact.php" class="btn btn-lg rounded-pill " style="color: black; background-color: #23a5ed;"><a style="color: black" href="Contact.php">Neem contact op!</a></button>
                 <button type="button" formaction="Contact.php"  class="btn btn-lg rounded-pill" style="color: black; background-color: #23a5ed;"><a style="color: black" href="proefles.php">Doe een proefles</a></button>
             </div>
-        </div>';
-    require "include/Preindex.php";
-    echo '<footer style="margin-top: 70px; background: #8ac246; margin-bottom: 10%;" class="rounded p-3" >
+        </div><?php 
+    require "include/Preindex.php"; ?>
+    <footer style="margin-top: 70px; background: #8ac246; margin-bottom: 10%;" class="rounded p-3" >
         <div class="footer">
             <div class="container" style="color: black;">
                 <div class="row">
@@ -324,7 +324,8 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
                 </div>
             </div>
         </div>
-    </footer>';
+    </footer>
+<?php
 }
 ?>
 </body>
