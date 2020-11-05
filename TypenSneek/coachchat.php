@@ -14,12 +14,13 @@ if (!$conn) {
 }
 
 
-echo "<button onclick=\"window.location.href='index.php';\"class='btn btn-primary'>Terug</button>";
+echo "<button onclick=\"window.location.href='coachchatoverzicht.php';\"class='btn btn-primary'>Terug</button>";
 if($_SESSION['usertype'] === "admin"){
 
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,53 +32,87 @@ if($_SESSION['usertype'] === "admin"){
 
 <body>
     <?php
+echo "<table style='border: solid 1px black;'>";
+echo "<tr><th>Voornaam</th><th>Achternaam</th><th>Chat bericht</th><th>Datum en tijd</th></tr>";
 
-$result = mysqli_query($conn,"SELECT * FROM gebruikers WHERE Aangemeld = 1 AND NOT ID= 15"); // Last ID needs to be admin id | admin = 15 on 30-10-2020
+class TableRows extends RecursiveIteratorIterator {
+  function __construct($it) {
+    parent::__construct($it, self::LEAVES_ONLY);
+  }
 
-?><table class='table table-striped'>
-        <tr>
-            <th scope='col'>Voornaam</th>
-            <th scope='col'>Achternaam</th>
-            <th scope='col'>Email</th>
-            <th scope='col'>Telefoonnummer</th>
-            <th scope='col'>Bericht</th>
-            <th scope='col'>Bericht versturen</th>
-        </tr>
-    </table>
-    <?php
-$rowid = 1;
-while($row = mysqli_fetch_array($result))
-{
-?>
-    <form action="processcoach.php" method="post">
-        <table>
-            <tr>
-                <td><?php echo $row['Voornaam'];?></td>
-                <td><?php echo $row['Achternaam'];?></td>
-                <td><?php echo $row['Email'];?></td>
-                <td><?php echo $row['Telefoonnummer'];?></td>
+  function current() {
+    return "<td style='width: 250px; border: 1px solid black;'>" . parent::current(). "</td>";
+  }
 
+  function beginChildren() {
+    echo "<tr>";
+  }
 
-                <input type="hidden" name="chat_message_id" value=''>
-                <input type="hidden" name="id" value='<?php echo $rowid;?>'>
-                <input type="hidden" name="from_user_id" value='15'><!-- needs to be admin id | admin = 15 on 30-10-2020 -->
-                <td><input type="hidden" name="to_user_id" value='<?php echo $row['ID'];?>'></td>
-                <td> Message: <input type="text" pattern='.*\S+.*' title='Dit veld mag niet leeg zijn'
-                        name="chat_message"></td>
-                <input type="hidden" name="timestamp" value=''>
-                <td><input type="submit" value="Verstuur bericht"></td>
-            </tr>
-        </table>
-    </form>
-    <?php
-    $rowid = $rowid + 1;
+  function endChildren() {
+    echo "</tr>" . "\n";
+  }
 }
 
+$servername = "localhost";
+$username = "root";
+$_SESSION['chosen_user'] = $_GET['chosen_user'];
+$_SESSION['lastname'] = $_GET['lastname'];
+$_SESSION['surname'] = $_GET['surname'];
+
+
+
+$lastname = $_SESSION['lastname'];
+$surname = $_SESSION['surname'];
+$chosen_user = $_SESSION['chosen_user'];
+try {
+    $conn = new PDO('mysql:host=localhost;dbname=typensneek', $username);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //replace user id = "2" with session user ID.
+    $stmt = $conn->prepare("SELECT voornaam, achternaam, chat_message, timestamp FROM chat_message INNER JOIN gebruikers ON chat_message.from_user_id = gebruikers.ID WHERE from_user_id='$chosen_user' OR to_user_id='$chosen_user'");
+    
+    $stmt->execute();
+
+    //set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+        //echo "<td>" . $surname ."</td>";
+        //echo "<td>" . $lastname ."</td>";
+        echo $v;
+        
+    }
+}   
+catch(PDOException $e) {
+  echo "Error: " . $e->getMessage();
+}
+$conn = null;
+echo "</table>";
+
+?>
+
+    <!-- Get time when page loads -->
+    <form action="<?php echo "processcoach.php?chosen_user='$chosen_user'"?>" method="post">
+        <?php $datenow = (date("Y-m-d H:i:s")); echo $datenow . "<br>";
+    
+    ?>
+        <input type="hidden" name="chat_message_id" value="" />
+        
+        <!--replace value 1 with admin's user ID. -->
+        <input type="hidden" name="to_user_id" value="<?php echo $chosen_user; ?>">
+        <!--replace user id = "2" with session user ID. -->
+        <input type="hidden" name="from_user_id" value="<?php echo $_SESSION["id"]; ?>">
+        <!-- Pattern blocks 'empty' form. Must have at least one non-whitespace character-->
+        Message: <input type="text" required pattern=".*\S+.*" title="Dit veld mag niet leeg zijn" name="chat_message">
+        <input type="hidden" name="timestamp" value="">
+
+        <input type="submit">
+    </form>
+    <button onClick="window.location.reload();">Haal berichten op</button>
+    <?php
 }else{
     header("Location: index.php");
 }
 ?>
-
 </body>
 
 </html>

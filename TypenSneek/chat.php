@@ -12,7 +12,7 @@
 
 <?php
 echo "<table style='border: solid 1px black;'>";
-echo "<tr><th>Chat bericht</th><th>Datum en tijd</th></tr>";
+echo "<tr><th>Voornaam</th><th>Achternaam</th><th>Chat bericht</th><th>Datum en tijd</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
   function __construct($it) {
@@ -40,7 +40,8 @@ try {
     $conn = new PDO('mysql:host=localhost;dbname=typensneek', $username);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //replace user id = "2" with session user ID.
-    $stmt = $conn->prepare("SELECT chat_message, timestamp FROM chat_message WHERE from_user_id='$user_id' OR to_user_id='$user_id'");
+    
+    $stmt = $conn->prepare("SELECT voornaam, achternaam, chat_message, timestamp FROM chat_message INNER JOIN gebruikers ON chat_message.from_user_id = gebruikers.ID WHERE from_user_id='$user_id' OR to_user_id='$user_id'");
     
     $stmt->execute();
 
@@ -59,7 +60,7 @@ echo "</table>";
 ?>
     <!-- Get time when page loads -->
     <form action="process.php" method="post">
-    <?php $a = (date("Y-m-d H:i:s")); echo $a . "<br>";
+    <?php $datenow = (date("Y-m-d H:i:s")); echo $datenow . "<br>";
     
     ?>
         <input type="hidden" name="chat_message_id" value=""/>
@@ -69,11 +70,10 @@ echo "</table>";
         <input type="hidden" name="from_user_id" value="<?php echo $_SESSION["id"]; ?>">
         <!-- Pattern blocks 'empty' form. Must have at least one non-whitespace character-->
         Message: <input type="text" required pattern=".*\S+.*" title="Dit veld mag niet leeg zijn" name="chat_message">
-        
         <input type="hidden" name="timestamp" value="">
 
         <input type="submit">
     </form>
-    <button onClick="window.location.reload();">Herlaad Pagina</button>
+    <button onClick="window.location.reload();">Haal berichten op</button>
 </body>
 </html>

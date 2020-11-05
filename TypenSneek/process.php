@@ -30,6 +30,7 @@ try {
     $stmt->bindParam(':to_user_id', $to_user_id);
     $stmt->bindParam(':from_user_id', $from_user_id);
     $stmt->bindParam(':chat_message', $message);
+    
     //$stmt->bindParam(':timestamp', $timestamp);
 
     // insert a row
